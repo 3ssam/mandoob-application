@@ -40,10 +40,10 @@ public class CompanyService extends MasterService<Company> {
     @Transactional
     public CompanyProjection update(CompanyReq req, String id){
         Company company = findById(id);
-//        if (companyRepository.existsByArNameAndIdNot(req.getArName(), id))
-//            throw new ApiValidationException("arName", "already-exist");
-//        if (companyRepository.existsByEnNameAndIdNot(req.getEnName(), id))
-//            throw new ApiValidationException("enName", "already-exist");
+        if (companyRepository.existsByArNameAndIdNot(req.getArName(), id))
+            throw new ApiValidationException("arName", "already-exist");
+        if (companyRepository.existsByEnNameAndIdNot(req.getEnName(), id))
+            throw new ApiValidationException("enName", "already-exist");
         company = createObject(req,company);
         companyRepository.save(company);
         return findById(company.getId(), CompanyProjection.class);
@@ -56,10 +56,6 @@ public class CompanyService extends MasterService<Company> {
         company.setUpdatedBy(userRepository.getOne(req.getCurrentUser()));
         company.setUpdatedAt(Instant.now());
         return company;
-    }
-
-    public List<Company> findAll(){
-        return companyRepository.findAll();
     }
 
     @Override

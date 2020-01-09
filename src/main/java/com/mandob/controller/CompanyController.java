@@ -1,12 +1,12 @@
 package com.mandob.controller;
 
 import com.mandob.base.Projection.LookupProjection;
+import com.mandob.base.Utils.ApiPageResponse;
+import com.mandob.base.Utils.ApiResponse;
 import com.mandob.base.Utils.PageRequestVM;
 import com.mandob.projection.Company.CompanyListProjection;
 import com.mandob.projection.Company.CompanyProjection;
 import com.mandob.request.CompanyReq;
-import com.mandob.response.ApiPageResponse;
-import com.mandob.response.ApiResponse;
 import com.mandob.service.CompanyService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

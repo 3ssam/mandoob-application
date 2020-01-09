@@ -1,10 +1,10 @@
 package com.mandob.controller;
 
+import com.mandob.base.Utils.ApiPageResponse;
+import com.mandob.base.Utils.ApiResponse;
 import com.mandob.domain.User;
 import com.mandob.projection.User.UserListProjection;
 import com.mandob.request.UserReq;
-import com.mandob.response.ApiPageResponse;
-import com.mandob.response.ApiResponse;
 import com.mandob.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
