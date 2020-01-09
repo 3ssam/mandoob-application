@@ -1,6 +1,6 @@
 package com.mandob.service;
 
-//import com.mandob.base.exception.ApiValidationException;
+import com.mandob.base.exception.ApiValidationException;
 import com.mandob.base.repository.BaseRepository;
 import com.mandob.base.service.MasterService;
 import com.mandob.domain.Company;
@@ -25,10 +25,10 @@ public class CompanyService extends MasterService<Company> {
 
     @Transactional
     public CompanyProjection create(CompanyReq req){
-//        if (companyRepository.existsByArName(req.getArName()))
-//            throw new ApiValidationException("arName", "already-exist");
-//        if (companyRepository.existsByEnName(req.getEnName()))
-//            throw new ApiValidationException("enName", "already-exist");
+        if (companyRepository.existsByArName(req.getArName()))
+            throw new ApiValidationException("arName", "already-exist");
+        if (companyRepository.existsByEnName(req.getEnName()))
+            throw new ApiValidationException("enName", "already-exist");
         Company company = new Company();
         company.setCreatedAt(Instant.now());
         company.setCreatedBy(userRepository.getOne(req.getCurrentUser()));
