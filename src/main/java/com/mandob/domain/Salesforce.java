@@ -42,8 +42,8 @@ public class Salesforce extends User {
     @JoinColumn(name = "city_id", referencedColumnName = "id")
     private City city;
 
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
-//    private Set<SalesforceMovement> movements = new HashSet<>();
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
+    private Set<SalesforceMovement> movements = new HashSet<>();
 
     @Override
     public String toString() {

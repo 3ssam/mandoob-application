@@ -4,10 +4,14 @@ import com.mandob.base.exception.ApiValidationException;
 import com.mandob.base.repository.BaseRepository;
 import com.mandob.base.service.MasterService;
 import com.mandob.domain.Salesforce;
+import com.mandob.domain.SalesforceMovement;
 import com.mandob.domain.enums.SalesforceRole;
 import com.mandob.domain.lookup.City;
+import com.mandob.projection.SalesForce.SalesforceMovementListProjection;
 import com.mandob.projection.SalesForce.SalesforceProjection;
+import com.mandob.repository.SalesforceMovementRepository;
 import com.mandob.repository.SalesforceRepository;
+import com.mandob.request.MovementReq;
 import com.mandob.request.SalesforceReq;
 import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.ObjectUtils;
@@ -25,7 +29,7 @@ public class SalesForceServices extends MasterService<Salesforce> {
     private final RoleService roleService;
     private final CityService cityService;
     private final SalesforceRepository salesforceRepository;
-    //private final SalesforceMovementRepository movementRepository;
+    private final SalesforceMovementRepository movementRepository;
 
     @Transactional
     public SalesforceProjection create(SalesforceReq req) {
@@ -122,20 +126,22 @@ public class SalesForceServices extends MasterService<Salesforce> {
         }
     }
 
-//    @Transactional
-//    public void postMovement(MovementReq req) {
-//        Salesforce salesforce = findById(CurrentUser.getId());
-//        SalesforceMovement movement = new SalesforceMovement();
-//        movement.setSalesforce(salesforce);
-//        movement.setLatitude(req.getLatitude());
-//        movement.setLongitude(req.getLongitude());
-//        movementRepository.save(movement);
-//    }
 
-//    @Transactional(readOnly = true)
-//    public List<SalesforceMovementListProjection> findMovementsBy(String salesforceId) {
-//        return movementRepository.findAllBySalesforceId(salesforceId);
-//    }
+    @Transactional
+    public void postMovement(MovementReq req) {
+        Salesforce salesforce = findById(req.getCurrentUser());
+        SalesforceMovement movement = new SalesforceMovement();
+        movement.setSalesforce(salesforce);
+        movement.setLatitude(req.getLatitude());
+        movement.setLongitude(req.getLongitude());
+        movement.setStatus(req.getStatus());
+        movementRepository.save(movement);
+    }
+
+    @Transactional(readOnly = true)
+    public List<SalesforceMovementListProjection> findMovementsBy(String salesforceId) {
+        return movementRepository.findAllBySalesforceId(salesforceId);
+    }
 
     void validateSalesforceToRole(String id, SalesforceRole salesforceRole, String fieldName) {
         if (StringUtils.isBlank(id))
@@ -143,6 +149,8 @@ public class SalesForceServices extends MasterService<Salesforce> {
         if (!salesforceRepository.existsByIdAndSalesforceRole(id, salesforceRole))
             throw new ApiValidationException(fieldName, "must-be-" + salesforceRole.toString().toLowerCase());
     }
+
+
 
     @Override
     protected BaseRepository<Salesforce> getRepository() {

@@ -61,6 +61,13 @@ public class UserService extends MasterService<User> {
             throw new ApiValidationException("email", "already-exist");
     }
 
+    public User validateEmail(String email) {
+        if (!existsByEmail(email))
+            throw new ApiValidationException("email", "is-not-exist");
+        return userRepository.findByEmail(email).get();
+    }
+
+
     private boolean existsByEmail(String email) {
         return userRepository.existsByEmail(email);
     }
