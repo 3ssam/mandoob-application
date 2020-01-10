@@ -7,5 +7,5 @@ import com.mandob.domain.lookup.Government;
 import java.util.List;
 
 public interface GovernmentRepository extends BaseRepository<Government> {
-    //List<LookupProjection> findAllAsLookupBy();
+    List<LookupProjection> findAllAsLookupBy();
 }

@@ -13,15 +13,15 @@ import javax.persistence.Table;
 @Table(name = "government")
 public class Government extends BaseEntity {
 
-    private String ar_Name;
-    private String en_Name;
+    private String arName;
+    private String enName;
 
     @Override
     public String toString() {
         return "Government{" +
                 "id='" + id + '\'' +
-                "ar_Name='" + ar_Name + '\'' +
-                ", en_Name='" + en_Name + '\'' +
+                "ar_Name='" + arName + '\'' +
+                ", en_Name='" + enName + '\'' +
                 '}';
     }
 

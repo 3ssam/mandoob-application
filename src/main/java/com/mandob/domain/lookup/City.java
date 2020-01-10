@@ -13,8 +13,8 @@ import javax.persistence.*;
 @Table(name = "city")
 public class City extends BaseEntity {
 
-    private String ar_Name;
-    private String en_Name;
+    private String arName;
+    private String enName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "government_id", referencedColumnName = "id")
@@ -24,8 +24,8 @@ public class City extends BaseEntity {
     public String toString() {
         return "City{" +
                 "id='" + id + '\'' +
-                "ar_Name='" + ar_Name + '\'' +
-                ", en_Name='" + en_Name + '\'' +
+                "ar_Name='" + arName + '\'' +
+                ", en_Name='" + enName + '\'' +
                 '}';
     }
 }

@@ -7,8 +7,7 @@ import com.mandob.domain.lookup.City;
 import java.util.List;
 
 public interface CityRepository extends BaseRepository<City> {
-//    List<LookupProjection> findAllAsLookupBy();
-//
-//    List<LookupProjection> findAllByGovernmentId(String governmentId);
+    List<LookupProjection> findAllAsLookupBy();
 
+    List<LookupProjection> findAllByGovernmentId(String governmentId);
 }
