@@ -23,9 +23,9 @@ public class Customer extends User {
     @Column(nullable = false)
     private String licenseNo;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "route_id", referencedColumnName = "id")
-//    private Route route;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "route_id", referencedColumnName = "id")
+    private Route route;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "government_id", referencedColumnName = "id")

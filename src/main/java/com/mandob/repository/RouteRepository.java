@@ -1,4 +1,8 @@
 package com.mandob.repository;
 
-public interface RouteRepository {
+import com.mandob.base.repository.MasterRepository;
+import com.mandob.domain.Route;
+
+public interface RouteRepository extends MasterRepository<Route> {
 }
+

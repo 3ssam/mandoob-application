@@ -3,6 +3,7 @@ package com.mandob.service;
 import com.mandob.base.exception.ApiValidationException;
 import com.mandob.base.repository.BaseRepository;
 import com.mandob.base.service.MasterService;
+import com.mandob.domain.Salesforce;
 import com.mandob.domain.User;
 import com.mandob.projection.User.UserProjection;
 import com.mandob.repository.CompanyRepository;
@@ -71,5 +72,12 @@ public class UserService extends MasterService<User> {
     @Override
     protected BaseRepository<User> getRepository() {
         return userRepository;
+    }
+
+    public void createNewUserData(User user) {
+        user.setSuspended(false);
+        user.setActivated(true);
+        user.setPassword(user.getPassword());
+        userRepository.save(user);
     }
 }
