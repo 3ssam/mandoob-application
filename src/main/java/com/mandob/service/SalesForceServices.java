@@ -3,10 +3,12 @@ package com.mandob.service;
 import com.mandob.base.exception.ApiValidationException;
 import com.mandob.base.repository.BaseRepository;
 import com.mandob.base.service.MasterService;
+import com.mandob.domain.Role;
 import com.mandob.domain.Salesforce;
 import com.mandob.domain.SalesforceMovement;
 import com.mandob.domain.enums.SalesforceRole;
 import com.mandob.domain.lookup.City;
+import com.mandob.projection.SalesForce.SalesforceListProjection;
 import com.mandob.projection.SalesForce.SalesforceMovementListProjection;
 import com.mandob.projection.SalesForce.SalesforceProjection;
 import com.mandob.repository.SalesforceMovementRepository;
@@ -151,6 +153,14 @@ public class SalesForceServices extends MasterService<Salesforce> {
     }
 
 
+    public List<SalesforceListProjection> getSalesforceByRole(String roleId){
+        Role role = roleService.findById(roleId);
+        if (role == null)
+        throw new ApiValidationException("Role Id", "not-exist");
+        SalesforceRole salesforceRole = SalesforceRole.valueOf(role.getEnName().toUpperCase());
+        List<SalesforceListProjection> list = salesforceRepository.findAllBySalesforceRole(salesforceRole);
+        return list;
+    }
 
     @Override
     protected BaseRepository<Salesforce> getRepository() {
