@@ -24,8 +24,8 @@ public class CustomerReq {
     @NotBlank(message = "must-not-be-null")
     private String phoneNumber2;
 
-//    @NotBlank(message = "must-not-be-null")
-//    private String route;
+    @NotBlank(message = "must-not-be-null")
+    private String route;
 
     @NotBlank(message = "must-not-be-null")
     private String licenseNo;

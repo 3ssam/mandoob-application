@@ -18,14 +18,12 @@ public class Customer extends User {
     @Column(length = 13)
     private String phoneNumber2;
 
-    private String detailedAddress;
-
     @Column(nullable = false)
     private String licenseNo;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "route_id", referencedColumnName = "id")
-//    private Route route;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "route_id", referencedColumnName = "id")
+    private Route route;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "government_id", referencedColumnName = "id")
@@ -48,7 +46,6 @@ public class Customer extends User {
                 ", email='" + getEmail() + '\'' +
                 ", activated=" + getActivated() +
                 ", suspended=" + getSuspended() +
-                ", detailedAddress='" + detailedAddress + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 "}";
