@@ -12,25 +12,41 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
+
 @Service
 @AllArgsConstructor
 public class RouteService extends MasterService<Route> {
     private final CityService cityService;
     private final RouteRepository routRepository;
     private final SalesForceServices salesforceService;
+    private final UserService userService;
 
     @Transactional
     public RouteProjection create(RouteReq req) {
-        Route route = null;//routeMapper.toEntity(req);
+        Route route = new Route();//routeMapper.toEntity(req);
+        route.setCreatedAt(Instant.now());
+        route.setCreatedBy(userService.findById(req.getCurrentUser()));
+        route = createNewRoute(req,route);
         updateReferences(req, route);
         routRepository.save(route);
         return findById(route.getId(), RouteProjection.class);
+    }
+
+    public Route createNewRoute(RouteReq req,Route route){
+        route.setCompany(userService.findById(req.getCurrentUser()).getCompany());
+        route.setUpdatedBy(userService.findById(req.getCurrentUser()));
+        route.setUpdatedAt(Instant.now());
+        route.setArName(req.getArName());
+        route.setEnName(req.getEnName());
+        return route;
     }
 
     @Transactional
     public RouteProjection update(String id, RouteReq req) {
         Route route = findById(id);
         //routeMapper.toEntity(req, route);
+        route = createNewRoute(req,route);
         updateReferences(req, route);
         routRepository.save(route);
         return findById(route.getId(), RouteProjection.class);
