@@ -22,6 +22,8 @@ public class MovementReq {
     @NotBlank(message = "must-not-be-blank")
     private String currentUser;
 
+    private String customer;
+
     public MovementStatus getStatus() {
         return MovementStatus.valueOf(status);
     }

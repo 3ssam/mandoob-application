@@ -15,7 +15,7 @@ import com.mandob.repository.SalesforceMovementRepository;
 import com.mandob.repository.SalesforceRepository;
 import com.mandob.request.MovementReq;
 import com.mandob.request.SalesforceReq;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -25,11 +25,13 @@ import java.time.Instant;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SalesForceServices extends MasterService<Salesforce> {
     private final UserService userService;
     private final RoleService roleService;
     private final CityService cityService;
+    //private final CustomerService customerService;
+    //private final ScheduleVisitService visitService;
     private final SalesforceRepository salesforceRepository;
     private final SalesforceMovementRepository movementRepository;
 
@@ -137,6 +139,10 @@ public class SalesForceServices extends MasterService<Salesforce> {
         movement.setLatitude(req.getLatitude());
         movement.setLongitude(req.getLongitude());
         movement.setStatus(req.getStatus());
+//        if (req.getCustomer() != null){
+//            movement.setCustomer(customerService.findById(req.getCustomer()));
+//        }
+
         movementRepository.save(movement);
     }
 

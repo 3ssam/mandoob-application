@@ -23,6 +23,10 @@ public class SalesforceMovement extends BaseEntity {
     @JoinColumn(name = "salesforce_id", referencedColumnName = "id")
     private Salesforce salesforce;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    private Customer customer;
+
     @Column(nullable = false)
     private LocalDateTime dateTime;
 
@@ -41,6 +45,7 @@ public class SalesforceMovement extends BaseEntity {
                 "longitude='" + longitude + '\'' +
                 ", latitude='" + latitude + '\'' +
                 ", salesforce=" + salesforce +
+                ", customer=" + customer +
                 ", dateTime=" + dateTime +
                 ", status=" + status +
                 '}';

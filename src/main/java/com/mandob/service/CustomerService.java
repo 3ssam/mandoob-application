@@ -7,14 +7,14 @@ import com.mandob.domain.Route;
 import com.mandob.projection.Customer.CustomerProjection;
 import com.mandob.repository.CustomerRepository;
 import com.mandob.request.CustomerReq;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CustomerService extends MasterService<Customer> {
     private final UserService userService;
     private final RouteService routeService;
