@@ -1,5 +1,6 @@
 package com.mandob.request;
 
+import com.mandob.domain.enums.ScheduleVisitType;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -19,13 +20,16 @@ public class ScheduleVisitReq {
     private LocalDateTime scheduleDate;
 
     @NotNull(message = "must-not-be-null")
-    @Pattern(regexp = "FOLLOW_UP|INVOICE_CANCELLATION", message = "invalid-value")
+    @Pattern(regexp = "FOLLOW_UP|CASH_COLLECTION", message = "invalid-value")
     private String visitType;
 
     @NotNull(message = "must-not-be-null")
     private Boolean partialPayAllowed;
 
-//    public ScheduleVisitType getVisitType() {
-//        return ScheduleVisitType.valueOf(visitType);
-//    }
+    @NotBlank(message = "must-not-be-blank")
+    private String currentUser;
+
+    public ScheduleVisitType getVisitType() {
+        return ScheduleVisitType.valueOf(visitType);
+    }
 }

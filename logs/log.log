@@ -66,3 +66,716 @@
 ٢٣-٠١-٢٠٢٠ ٠٠:١٦:٥٨.٢٧٧ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 ٢٣-٠١-٢٠٢٠ ٠٠:١٦:٥٨.٢٨٥ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 8 ms
 ٢٣-٠١-٢٠٢٠ ٠٦:٢٩:٥١.٠٦٧ [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5h24m58s406ms543µs200ns).
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٤٧.٧٥٧ [Thread-8] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٤٧.٧٥٩ [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٤٧.٧٦٠ [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٤٧.٧٧٣ [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٤٨.٢٦٠ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 17264 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٤٨.٢٦٠ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٤٨.٨١٩ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٤٨.٨٦٢ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 43ms. Found 9 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٤٧٠ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ba793da7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٤٩٧ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٥٠٦ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٥٤٦ [restartedMain] WARN  o.a.tomcat.util.modeler.Registry.log - The MBean registry cannot be disabled because it has already been initialised
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٥٦٧ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٥٦٩ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٥٦٩ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٥٩٤ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٥٩٤ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2331 ms
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٦١٣ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Starting...
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٦٢٢ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٦٢٣ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٦٨٦ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٠.٦٩٩ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥١.٢٥٠ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥١.٢٥١ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥١.٢٦٢ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥١.٩٢٢ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٢.١٢٠ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٢.٢١٠ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٢.٣٠٥ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٢.٣٠٦ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 4.076 seconds (JVM running for 225367.159)
+٢٥-٠١-٢٠٢٠ ١٤:٤٥:٥٢.٣٠٨ [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+٢٥-٠١-٢٠٢٠ ١٤:٤٦:٠٣.١٩٦ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٤:٤٦:٠٣.١٩٨ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٤:٤٦:٠٣.٢٠٠ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٤:٤٦:٠٣.٢١١ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٠.٣٥١ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 1680 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٠.٣٥٦ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٠.٤٠٦ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٠.٤٠٧ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٠.٤٠٨ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.١١٩ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٢٠٨ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 82ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٤٨٢ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c38493e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٥٥٠ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٥٦٠ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٧٤٧ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٧٥٤ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٧٥٥ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٨٢٣ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٨٢٤ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1416 ms
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣١.٨٥٦ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٢.١٥١ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٢.١٥٤ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٢.٢٧٤ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٢.٣٤١ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٢.٤٥٤ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٢.٥٤٢ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٣.٩٥٨ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٣.٩٦٤ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٣.٩٧٦ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٤.٦٨٣ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٤.٧٦٩ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٤.٨٤٠ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٤.٩١٣ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٤.٩٩٦ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٥.٠٠٩ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٥.٠٣٨ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٥.١٥٨ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٥.١٨٠ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٥.١٩٥ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٥.٢١٧ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٥.٢٤٦ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٥:٣٣:٣٥.٢٤٨ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 5.344 seconds (JVM running for 6.466)
+٢٥-٠١-٢٠٢٠ ١٥:٣٤:٥٠.٧٣٦ [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٥:٣٤:٥٠.٧٣٨ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٥:٣٤:٥٠.٧٤٧ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 8 ms
+٢٥-٠١-٢٠٢٠ ١٥:٣٧:١٢.٧٠٦ [http-nio-8011-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [org.springframework.data.mapping.PropertyReferenceException: No property detailedAddress found for type Customer!]
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:٠٩.٠٤٠ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:٠٩.٠٥١ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:٠٩.٠٥٦ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:٠٩.٠٦٩ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٤.٦٠٥ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 11488 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٤.٦١١ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٤.٦٥٨ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٤.٦٥٩ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٤.٦٦٠ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٥.٤٢٢ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٥.٥٠٨ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 79ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٥.٧٥٩ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$a06a1ccb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٥.٨١٨ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٥.٨٢٩ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٠١٦ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٠٢٢ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٠٢٣ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٠٨٧ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٠٨٧ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1427 ms
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.١١٥ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٣١٤ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٣١٨ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٤١٢ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٤٦١ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٥٤١ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٦.٦١٢ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٧.٥٣٠ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٧.٥٣٥ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٧.٥٤٧ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٢٨١ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٣٦٤ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٤٣٤ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٥٠٠ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٥٨٠ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٥٩٣ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٦٢١ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٧٣٧ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٧٥٩ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٧٧٥ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٧٩٦ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٨٢٥ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٥:٣٩:١٨.٨٢٧ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 4.606 seconds (JVM running for 5.502)
+٢٥-٠١-٢٠٢٠ ١٥:٤٢:١٩.٧٩٤ [http-nio-8011-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٥:٤٢:١٩.٧٩٥ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٥:٤٢:١٩.٨٠٧ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 11 ms
+٢٥-٠١-٢٠٢٠ ١٥:٤٦:٤٨.٠٦٢ [http-nio-8011-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٥:٤٧:٣١.٤٨٨ [http-nio-8011-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [java.lang.NullPointerException]
+٢٥-٠١-٢٠٢٠ ١٥:٤٩:٢٤.١١٥ [http-nio-8011-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [java.lang.NullPointerException]
+٢٥-٠١-٢٠٢٠ ١٥:٤٩:٢٤.١٨٢ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٥:٤٩:٢٤.٢٠١ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٥:٤٩:٢٤.٢٠٦ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٥:٤٩:٢٤.٢٢١ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤١.٣٤٤ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 4248 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤١.٣٤٩ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤١.٤٤٢ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤١.٤٤٣ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤١.٤٤٤ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٢٣٧ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٣١٩ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 76ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٥٧٥ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8f0b5093] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٦٢٩ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٦٣٨ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٨١٠ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٨١٦ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٨١٧ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٨٨٠ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٨٨٠ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1435 ms
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٢.٩٠٨ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٣.١١٤ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٣.١١٨ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٣.٢٣٠ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٣.٢٧٥ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٣.٣٥٤ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٣.٤١٦ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٤.٣١٤ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٤.٣١٩ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٤.٣٣٣ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٠٢٠ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.١١٢ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.١٧٧ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٢٤٢ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٣١٩ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٣٣٤ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٣٥٩ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٤٧٦ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٥٠٠ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٥١٥ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٥٣٧ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٥٦٥ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٥.٥٦٧ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 4.679 seconds (JVM running for 5.661)
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٩.٣٢٣ [http-nio-8011-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٩.٣٢٥ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٤٩.٣٣٠ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 5 ms
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٥٦.٧١٦ [http-nio-8011-exec-2] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - SQL Error: 1048, SQLState: 23000
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٥٦.٧١٦ [http-nio-8011-exec-2] ERROR o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - Column 'customer_id' cannot be null
+٢٥-٠١-٢٠٢٠ ١٥:٥٠:٥٦.٧٤٤ [http-nio-8011-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement]
+٢٥-٠١-٢٠٢٠ ١٥:٥٢:١٢.٥٦٨ [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59s349ms192µs800ns).
+٢٥-٠١-٢٠٢٠ ١٥:٥٢:١٢.٦٠٦ [http-nio-8011-exec-4] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - SQL Error: 1048, SQLState: 23000
+٢٥-٠١-٢٠٢٠ ١٥:٥٢:١٢.٦٠٩ [http-nio-8011-exec-4] ERROR o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - Column 'customer_id' cannot be null
+٢٥-٠١-٢٠٢٠ ١٥:٥٢:١٢.٦١٧ [http-nio-8011-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement]
+٢٥-٠١-٢٠٢٠ ١٥:٥٢:١٢.٦٣٥ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٥:٥٢:١٢.٦٤٧ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٥:٥٢:١٢.٦٥٢ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٥:٥٢:١٢.٦٦٥ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٦.٥٧١ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 9708 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٦.٥٧٥ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٦.٦٣٢ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٦.٦٣٤ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٦.٦٣٤ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٧.٧٥٥ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٧.٩٠٢ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 138ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٣٠٨ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$207ded5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٤٠٣ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٤١٨ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٦٨١ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٦٩١ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٦٩١ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٧٨٩ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٧٨٩ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2155 ms
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٨.٨٣٤ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٩.١٤٢ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٩.١٤٨ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٩.٣٢٧ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٩.٣٩٦ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٩.٥١٩ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٣٩.٦٢٦ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤١.٠٧٨ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤١.٠٨٥ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤١.١٠٠ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٣٤٠ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٤٤٣ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٥١٧ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٥٨٤ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٦٦٦ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٦٧٨ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٧٠٧ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٨٢٩ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٨٥١ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٨٦٧ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٨٨٩ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٩١٦ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٢.٩١٨ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 6.856 seconds (JVM running for 8.146)
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٣.٩٠٩ [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٣.٩١٠ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٥:٥٣:٤٣.٩١٩ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 9 ms
+٢٥-٠١-٢٠٢٠ ١٥:٥٤:١٩.٥٣٤ [http-nio-8011-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٥:٥٤:٤٩.٨٣٤ [http-nio-8011-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٦:٣٥:٥٦.٣٦٦ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٦:٣٥:٥٦.٣٧٤ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٦:٣٥:٥٦.٣٨٠ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٦:٣٥:٥٦.٣٨٤ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠١.١٨٥ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 18900 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠١.١٩١ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠١.٢٥٦ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠١.٢٥٧ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠١.٢٥٨ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٠٦٣ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.١٤٨ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 78ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٣٨٦ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$a23e49b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٤٥٤ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٤٦٦ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٦٩٩ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٧٠٦ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٧٠٧ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٧٧٣ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٧٧٣ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1515 ms
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٢.٨٠٥ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٣.٠٧٥ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٣.٠٧٩ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٣.٢٤٤ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٣.٢٩٩ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٣.٣٩٢ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٣.٥١٤ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٤.٥١١ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٤.٥١٦ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٤.٥٢٩ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٢٧١ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٣٦١ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٤٣٦ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٥٠٦ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٥٩١ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٦٠٣ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٦٣٣ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٨٧٦ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٩٢١ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٥.٩٥٦ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٦.٠٠٨ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٦.٠٤٢ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٠٦.٠٤٥ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 5.268 seconds (JVM running for 6.205)
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٢٦.٩٩٦ [http-nio-8011-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٢٦.٩٩٧ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٢٧.٠٠٤ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 7 ms
+٢٥-٠١-٢٠٢٠ ١٦:٣٦:٢٧.٢٦٣ [http-nio-8011-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٢٥.٥٧٩ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٢٥.٥٨٣ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٢٥.٥٨٧ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٢٥.٥٩٩ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٠.١٣٣ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 23228 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٠.١٣٦ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٠.١٨١ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٠.١٨٢ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٠.١٨٢ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٠.٩٨٣ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٠٧٠ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 80ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٣٣١ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f874e258] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٣٩٥ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٤٠٧ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٦٢٦ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٦٣٢ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٦٣٣ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٦٩٩ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٦٩٩ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1516 ms
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٧٢٨ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٩٧٥ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣١.٩٧٩ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٢.٠٧٩ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٢.١٢٩ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٢.٢٢٣ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٢.٣١٣ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٣.٣٥٩ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٣.٣٦٤ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٣.٣٧٨ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.١٤٢ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٢٥٤ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٣٣٤ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٤٠٥ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٥٠٣ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٥١٧ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٥٤٩ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٦٦٨ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٦٨٩ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٧٠٤ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٧٢٧ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٧٥٤ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٣٤.٧٥٦ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 5.04 seconds (JVM running for 6.07)
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٤٤.٦٧٤ [http-nio-8011-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٤٤.٦٧٥ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٦:٣٩:٤٤.٦٨٠ [http-nio-8011-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 5 ms
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:١٧.٨٠٩ [Thread-4] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:١٧.٨١١ [Thread-4] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:١٧.٨١٦ [Thread-4] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:١٧.٨٢٧ [Thread-4] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٣٩٥ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 23228 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٣٩٥ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٦٧٥ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٦٨٠ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 0ms. Found 0 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٧٤٨ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f874e258] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٧٤٨ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٧٥٨ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٧٨٨ [restartedMain] WARN  o.a.tomcat.util.modeler.Registry.log - The MBean registry cannot be disabled because it has already been initialised
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٠٧ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٠٨ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٠٩ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٢٩ [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٢٩ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 429 ms
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٤٤ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Starting...
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٥٤ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٥٤ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٧٩ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٨٨٤ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٩٠٤ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٩٠٤ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٩٠٩ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٩٢٩ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٣.٩٦١ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٤.٠٠٥ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٤.٠٥٨ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٤.٠٦١ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 0.694 seconds (JVM running for 55.374)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٤.١٣٥ [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٦.٨٩٩ [Thread-8] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٦.٩٠١ [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٦.٩٠١ [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٦.٩١١ [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٢٣٥ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 23228 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٢٣٦ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٥٨١ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٦٥٣ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 72ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٧٥٢ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f874e258] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٧٥٥ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٧٦١ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٧٩٧ [restartedMain] WARN  o.a.tomcat.util.modeler.Registry.log - The MBean registry cannot be disabled because it has already been initialised
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨١٥ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨١٥ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨١٥ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨٣٤ [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨٣٥ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 597 ms
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨٤٩ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-4 - Starting...
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨٥٦ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-4 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨٥٧ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/mandob_db'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٨٩٨ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٧.٩٠٤ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٨.٤٤٥ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٨.٤٤٥ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٨.٤٥٢ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٠٤٩ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStarting - Starting MandobDemoApplicationTests on DESKTOP-INV2J7Q with PID 19032 (started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.١٣٥ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.١٩٢ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٢٤٦ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٣٤٠ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٣٤١ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٣٥٣ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٤١٤ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٤٣٣ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٤٤٦ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٤٧١ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٤٧٨ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٤٧٩ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 2.266 seconds (JVM running for 60.793)
+٢٥-٠١-٢٠٢٠ ١٦:٤٠:٢٩.٤٨٣ [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   Swagger2DocumentationConfiguration matched:
+      - @ConditionalOnWebApplication (required) found 'session' scope (OnWebApplicationCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+??-??-???? ??:??:??.??? [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+??-??-???? ??:??:??.??? [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 99ms. Found 10 JPA repository interfaces.
+??-??-???? ??:??:??.??? [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$cb263cc9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+??-??-???? ??:??:??.??? [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+??-??-???? ??:??:??.??? [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+??-??-???? ??:??:??.??? [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+??-??-???? ??:??:??.??? [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+??-??-???? ??:??:??.??? [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+??-??-???? ??:??:??.??? [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+??-??-???? ??:??:??.??? [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+??-??-???? ??:??:??.??? [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+??-??-???? ??:??:??.??? [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+??-??-???? ??:??:??.??? [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+??-??-???? ??:??:??.??? [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+??-??-???? ??:??:??.??? [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+??-??-???? ??:??:??.??? [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStarted - Started MandobDemoApplicationTests in 6.393 seconds (JVM running for 7.36)
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٦:٤٣:٠٤.٤٥٦ [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٦:٤٣:٠٤.٤٥٧ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٦:٤٣:٠٤.٤٦٠ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 3 ms
+٢٥-٠١-٢٠٢٠ ١٦:٥٧:٤٨.٠٧٥ [HikariPool-4 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=4m50s88ms789µs400ns).
+٢٥-٠١-٢٠٢٠ ١٧:١١:٤٤.٣٠٣ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٧:١١:٤٤.٣٠٧ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٧:١١:٤٤.٣٠٨ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-4 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٧:١١:٤٤.٣٢٦ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-4 - Shutdown completed.
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStarting - Starting MandobDemoApplicationTests on DESKTOP-INV2J7Q with PID 9172 (started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+??-??-???? ??:??:??.??? [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+??-??-???? ??:??:??.??? [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 97ms. Found 10 JPA repository interfaces.
+??-??-???? ??:??:??.??? [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$4a887f24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+??-??-???? ??:??:??.??? [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+??-??-???? ??:??:??.??? [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+??-??-???? ??:??:??.??? [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+??-??-???? ??:??:??.??? [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+??-??-???? ??:??:??.??? [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+??-??-???? ??:??:??.??? [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+??-??-???? ??:??:??.??? [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+??-??-???? ??:??:??.??? [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+??-??-???? ??:??:??.??? [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+??-??-???? ??:??:??.??? [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+??-??-???? ??:??:??.??? [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+??-??-???? ??:??:??.??? [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+??-??-???? ??:??:??.??? [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStarted - Started MandobDemoApplicationTests in 7.327 seconds (JVM running for 8.138)
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٠٩.٧٥٢ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 19336 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٠٩.٧٥٨ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٠٩.٨٢١ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٠٩.٨٢٢ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٠٩.٨٢٣ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٠.٩٤٤ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٠٧٨ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 125ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٤٦١ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$3aaf8dba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٥٤٦ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٥٦٠ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٨٤٠ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٨٤٩ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٨٥٠ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٩٤٩ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١١.٩٤٩ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2126 ms
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٢.٠٠٠ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٢.٣٣٠ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٢.٣٣٦ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/tajertec_mandoob'
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٢.٤٨٩ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٢.٥٥٥ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٢.٦٦٨ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٢.٧٧١ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٤.٤٧٦ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٤.٤٨٥ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٤.٥٠٥ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٥.٦٦٢ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٥.٧٩٨ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٥.٩٠٩ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.٠١٢ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.١٣٦ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.١٥٥ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.٢٠٥ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.٣٩٢ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.٤٢٨ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.٤٥٣ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.٤٩٢ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.٥٣٥ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٧:٥١:١٦.٥٣٨ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 7.29 seconds (JVM running for 8.661)
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٢٧.٥٣٤ [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٢٧.٥٣٦ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٢٧.٥٥١ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 15 ms
+٢٥-٠١-٢٠٢٠ ١٧:٥١:٢٧.٩٢٤ [http-nio-8011-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٢٦.٦٣٢ [http-nio-8011-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٢٦.٧٠٩ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٢٦.٧١٩ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٢٦.٧٢٤ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٢٦.٧٤١ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٢.٤٩٧ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 6444 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٢.٥٠١ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٢.٥٦٧ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٢.٥٦٩ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٢.٥٦٩ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٣.٤١٤ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٣.٥٠٩ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 88ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٣.٨٢١ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$126b1121] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٣.٨٨٣ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٣.٨٩٤ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.٠٩٥ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.١٠٢ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.١٠٢ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.١٧٤ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.١٧٤ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1604 ms
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.٢٠٧ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.٤٣٤ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.٤٣٩ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/tajertec_mandoob'
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.٥٦٣ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.٦١٧ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.٧٠٢ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٤.٧٧٧ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٦.٠٧١ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٦.٠٧٧ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٦.٠٩٠ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٧.٣١٩ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٧.٥٤٤ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٧.٧٢٤ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٧.٨٩٧ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.١١١ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.١٤٥ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.١٩٩ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.٤٩٠ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.٥٤٤ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.٥٦٩ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.٦١٠ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.٦٨٠ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٧:٥٢:٣٨.٦٨٥ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 6.579 seconds (JVM running for 7.638)
+٢٥-٠١-٢٠٢٠ ١٧:٥٣:١٨.١٦٨ [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٧:٥٣:١٨.١٧٠ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٧:٥٣:١٨.١٨٢ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 12 ms
+٢٥-٠١-٢٠٢٠ ١٧:٥٣:٣٦.٠١٣ [http-nio-8011-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٤٨.٦٢٧ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 17928 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٤٨.٦٣١ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٤٨.٦٧٥ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٤٨.٦٧٥ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٤٨.٦٧٦ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٤٩.٥٣٥ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٤٩.٦٤٥ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 104ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٠١٨ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$79080565] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٠٨٢ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٠٩٤ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٣٠١ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٣٠٨ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٣٠٩ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٣٨٠ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٣٨٠ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1704 ms
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٤١٥ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٦٤٤ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٦٤٨ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/tajertec_mandoob'
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٧٥٤ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٨٠٦ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٨٨٩ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٠.٩٦٤ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٢.٠٧٥ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٢.٠٨٧ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٢.١١٢ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٢.٩٨٤ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٠٨٦ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.١٧٣ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٢٦٦ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٣٩٤ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٤١٤ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٤٥٥ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٦٠٢ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٦٣٠ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٦٥٥ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٦٨٦ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٧٢٠ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٣.٧٥٢ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 5.488 seconds (JVM running for 6.411)
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٩.٨٧٨ [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٩.٨٧٩ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٧:٥٤:٥٩.٨٨٩ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 9 ms
+٢٥-٠١-٢٠٢٠ ١٧:٥٦:٥٣.٢٤٨ [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m2s503ms695µs900ns).
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:١٠.١٨٩ [http-nio-8011-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:١٠.٢٣٤ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:١٠.٢٥٦ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:١٠.٢٦٢ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:١٠.٢٧٧ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٣٩.٢٢٨ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 18616 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٣٩.٢٣٢ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٣٩.٢٩٧ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٣٩.٢٩٨ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٣٩.٢٩٩ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٠.٢٢٨ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٠.٣١٨ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 84ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤١.٣٥٨ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8c0e9936] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤١.٥٤٨ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤١.٧١٣ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٣.٧٧٧ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٣.٨٢٣ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٣.٨٢٤ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٤.٣٦١ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٤.٣٦٢ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 5063 ms
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٤.٨٤٦ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٥.٨٩٠ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٥.٩٠١ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/tajertec_mandoob'
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٧.٠٩٨ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٧.٣٢٠ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٧.٧١٢ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٤٨.١٠٢ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٥٤.١٠٤ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٥٤.١٢٣ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٧:٥٧:٥٤.٢٨٢ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٢٤.٨٩٣ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٢٨.٠٠٢ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٣٠.٦٠٣ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٣٢.٨٧٤ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٣٥.٤٣٨ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٣٥.٧٠٣ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٣٦.٣٧٦ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٣٩.٣٦٤ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٣٩.٩٦٧ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٤٠.٤٩٥ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٤١.٣٤٧ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٤١.٩٩٩ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٤٢.٠٢٧ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 63.297 seconds (JVM running for 64.291)
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٤٧.٤٣٦ [http-nio-8011-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٤٧.٤٤٠ [http-nio-8011-exec-5] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٧:٥٨:٤٧.٥٨٣ [http-nio-8011-exec-5] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 141 ms
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٠٩.٨٠٧ [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m22s509ms415µs400ns).
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٠٩.٨٩٣ [http-nio-8011-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [com.mandob.base.exception.ApiValidationException: common.request.invalid-input-data]
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٠٩.٩٢٥ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٠٩.٩٤٣ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٠٩.٩٥٢ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٠٩.٩٧٦ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:١٦.٨٧٣ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarting - Starting MandobDemoApplication on DESKTOP-INV2J7Q with PID 22408 (C:\Users\EGYPT\Downloads\mandob-demo\target\classes started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:١٦.٨٨٠ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:١٦.٩٦٩ [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo - The Class-Path manifest attribute in C:\Users\EGYPT\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/EGYPT/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:١٦.٩٧٠ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:١٦.٩٧١ [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:١٨.٦٠٩ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:١٨.٨٢٦ [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 203ms. Found 10 JPA repository interfaces.
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٠.٨٠٩ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$78d7c4f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢١.٢١٨ [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢١.٦٠٨ [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٥.٩٨٠ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8011 (http)
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٦.٠٩٨ [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٦.١٠٢ [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.29]
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٧.١٣٦ [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٧.١٣٩ [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 10167 ms
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٨.٢٤٣ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٩.٦٧٣ [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٢٩.٦٨٥ [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/tajertec_mandoob'
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٣٠.٩٢٦ [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٣١.١٦٠ [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٣١.٥٩٠ [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٣٢.٠٠٣ [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٣٨.٢٤٣ [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٣٨.٢٧٢ [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٣٨.٤٢٦ [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٥٧.٧٢١ [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+٢٥-٠١-٢٠٢٠ ١٨:٠٣:٥٩.١٨٥ [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٠.٣١٩ [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠١.٤٥٢ [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٢.٨٩٨ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٢.٩٨٥ [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٣.٢٤٨ [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٤.٥٩١ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٤.٩٣١ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٥.٣٧٤ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٥.٨٨٤ [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٦.١١٤ [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8011 (http) with context path ''
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٠٦.١٢٨ [restartedMain] INFO  com.mandob.MandobDemoApplication.logStarted - Started MandobDemoApplication in 49.921 seconds (JVM running for 51.513)
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:١٦.٠٩٤ [http-nio-8011-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:١٦.٠٩٩ [http-nio-8011-exec-3] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:١٦.٢٢٩ [http-nio-8011-exec-3] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 127 ms
+٢٥-٠١-٢٠٢٠ ١٨:٠٤:٣٥.٩٢٤ [http-nio-8011-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.logException - Resolved [java.util.NoSuchElementException: Can't find Customer with Id: W8d4w68LW]
