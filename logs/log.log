@@ -1314,3 +1314,39 @@ The dependencies of some of the beans in the application context form a cycle:
 ٢٨-٠١-٢٠٢٠ ٠٥:٤٦:٢٨.٤٦١ [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 ٢٨-٠١-٢٠٢٠ ٠٥:٤٦:٢٨.٤٦٢ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 ٢٨-٠١-٢٠٢٠ ٠٥:٤٦:٢٨.٤٦٨ [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 6 ms
+٢٨-٠١-٢٠٢٠ ٠٥:٥٣:٣٧.٥٣١ [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+٢٨-٠١-٢٠٢٠ ٠٥:٥٣:٣٧.٥٤٧ [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+٢٨-٠١-٢٠٢٠ ٠٥:٥٣:٣٧.٥٤٧ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+٢٨-٠١-٢٠٢٠ ٠٥:٥٣:٣٧.٥٦٣ [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStarting - Starting MandobDemoApplicationTests on DESKTOP-INV2J7Q with PID 15344 (started by EGYPT in C:\Users\EGYPT\Downloads\mandob-demo)
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+??-??-???? ??:??:??.??? [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+??-??-???? ??:??:??.??? [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 132ms. Found 12 JPA repository interfaces.
+??-??-???? ??:??:??.??? [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$27b0f698] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+??-??-???? ??:??:??.??? [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+??-??-???? ??:??:??.??? [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+??-??-???? ??:??:??.??? [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+??-??-???? ??:??:??.??? [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+??-??-???? ??:??:??.??? [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+??-??-???? ??:??:??.??? [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+??-??-???? ??:??:??.??? [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+??-??-???? ??:??:??.??? [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+??-??-???? ??:??:??.??? [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+??-??-???? ??:??:??.??? [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+??-??-???? ??:??:??.??? [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+??-??-???? ??:??:??.??? [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+??-??-???? ??:??:??.??? [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_1
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_2
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_3
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_4
+??-??-???? ??:??:??.??? [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: lookupUsingGET_5
+??-??-???? ??:??:??.??? [main] INFO  c.mandob.MandobDemoApplicationTests.logStarted - Started MandobDemoApplicationTests in 7.79 seconds (JVM running for 8.784)
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+??-??-???? ??:??:??.??? [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
