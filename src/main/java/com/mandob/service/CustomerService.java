@@ -58,7 +58,7 @@ public class CustomerService extends MasterService<Customer> {
         customer.setPassword(req.getPassword());
         customer.setRole(roleService.getId("customer"));
         Route route = routeService.findById(req.getRoute());
-        customer.setAssignedTo(route.getSalesforce());
+        customer.setSalesforce(route.getSalesforce());
         customer.setGovernment(route.getGovernment());
         customer.setCity(route.getCity());
         return customer;

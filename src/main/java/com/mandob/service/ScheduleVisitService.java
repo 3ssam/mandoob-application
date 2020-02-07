@@ -19,11 +19,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.awt.*;
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.Optional;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -31,13 +30,12 @@ import java.util.List;
 public class ScheduleVisitService extends AuditService<ScheduleVisit> {
     private final CustomerService customerService;
     private final SalesForceServices salesforceService;
-//    private final ScheduleVisitMapper scheduleVisitMapper;
     private final ScheduleVisitRepository scheduleVisitRepository;
     private final UserService userService;
 
     @Transactional
     public ScheduleVisitProjection create(ScheduleVisitReq req) {
-        if (!userService.findById(req.getCurrentUser()).getRole().getEnName().equals("sales_manager"))
+        if (!userService.findById(req.getCurrentUser()).getRole().getEnName().equals("sales_manager") && !userService.findById(req.getCurrentUser()).getRole().getEnName().equals("superuser"))
             throw new ApiValidationException("Error !", "User is not allowed to create a visit, the user have right to create user his role must be salesforce manger");
         validateDateGreaterThanToday(req.getScheduleDate());
         Customer customer = customerService.findById(req.getCustomer());
@@ -85,7 +83,7 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         Customer customer = customerService.findById(customerId);
         if (customer == null)
             throw new ApiValidationException("Customer Id", "not-exist");
-        Salesforce salesforce = customer.getAssignedTo();
+        Salesforce salesforce = customer.getSalesforce();//customer.getAssignedTo();
         if (salesforce == null)
             throw new ApiValidationException("Salesforce Id", "not-exist");
         ScheduleVisit scheduleVisit = scheduleVisitRepository.findBySalesforceAndCustomer(salesforce,customer);

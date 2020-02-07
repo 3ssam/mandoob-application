@@ -3,16 +3,16 @@ package com.mandob.service;
 import com.mandob.base.exception.ApiValidationException;
 import com.mandob.base.repository.BaseRepository;
 import com.mandob.base.service.MasterService;
-import com.mandob.domain.Role;
-import com.mandob.domain.Salesforce;
-import com.mandob.domain.SalesforceMovement;
+import com.mandob.domain.*;
 import com.mandob.domain.enums.SalesforceRole;
+import com.mandob.domain.enums.ScheduleVisitStatus;
 import com.mandob.domain.lookup.City;
 import com.mandob.projection.SalesForce.SalesforceListProjection;
 import com.mandob.projection.SalesForce.SalesforceMovementListProjection;
 import com.mandob.projection.SalesForce.SalesforceProjection;
 import com.mandob.repository.SalesforceMovementRepository;
 import com.mandob.repository.SalesforceRepository;
+import com.mandob.repository.ScheduleVisitRepository;
 import com.mandob.request.MovementReq;
 import com.mandob.request.SalesforceReq;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +22,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,6 +36,7 @@ public class SalesForceServices extends MasterService<Salesforce> {
     //private final ScheduleVisitService visitService;
     private final SalesforceRepository salesforceRepository;
     private final SalesforceMovementRepository movementRepository;
+    private final ScheduleVisitRepository scheduleVisitRepository;
 
     @Transactional
     public SalesforceProjection create(SalesforceReq req) {
@@ -139,10 +142,26 @@ public class SalesForceServices extends MasterService<Salesforce> {
         movement.setLatitude(req.getLatitude());
         movement.setLongitude(req.getLongitude());
         movement.setStatus(req.getStatus());
-//        if (req.getCustomer() != null){
-//            movement.setCustomer(customerService.findById(req.getCustomer()));
-//        }
+        if (req.getStatus().name().equals("CHECKIN")) {
+            if (req.getCustomer() == null)
+                throw new ApiValidationException("salesforceRole", "invalid-value");
+            List<ScheduleVisit> scheduleVisits = salesforce.getScheduleVisits();
+            ScheduleVisit visit = null;
+            LocalDateTime time = LocalDateTime.now();
+            for (ScheduleVisit scheduleVisit: scheduleVisits){
+                LocalDateTime visitTime = scheduleVisit.getScheduleDate();
+                if (visitTime.getYear() == time.getYear() && visitTime.getMonth().equals(time.getMonth())  && visitTime.getDayOfMonth() == time.getDayOfMonth())
+                if (scheduleVisit.getCustomer().getId().equals(req.getCustomer())){
+                    visit = scheduleVisit;
+                    break;
+                }
+            }
+            if (visit != null) {
+                visit.setVisitStatus(ScheduleVisitStatus.ACHIEVED);
+                scheduleVisitRepository.save(visit);
+            }
 
+        }
         movementRepository.save(movement);
     }
 
@@ -167,6 +186,16 @@ public class SalesForceServices extends MasterService<Salesforce> {
         List<SalesforceListProjection> list = salesforceRepository.findAllBySalesforceRole(salesforceRole);
         return list;
     }
+
+    public List<String> getCustomersOfSalesforce(String salesforceId){
+        Salesforce salesforce = findById(salesforceId);
+        List<Customer> customers = salesforce.getCustomers();
+        List<String> customer_ids = new ArrayList<>();
+        for (Customer customer:customers)
+            customer_ids.add(customer.getId());
+        return customer_ids;
+    }
+
 
     @Override
     protected BaseRepository<Salesforce> getRepository() {

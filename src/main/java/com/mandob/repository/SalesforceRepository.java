@@ -1,7 +1,6 @@
 package com.mandob.repository;
 
 import com.mandob.base.repository.MasterRepository;
-import com.mandob.domain.Role;
 import com.mandob.domain.Salesforce;
 import com.mandob.domain.enums.SalesforceRole;
 import com.mandob.projection.SalesForce.SalesforceListProjection;

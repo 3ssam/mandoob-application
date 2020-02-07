@@ -34,8 +34,8 @@ public class Customer extends User {
     private City city;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "assignedTo_id", referencedColumnName = "id")
-    private Salesforce assignedTo;
+    @JoinColumn(name = "salesforce_id", referencedColumnName = "id")
+    private Salesforce salesforce;
 
     @Override
     public String toString() {

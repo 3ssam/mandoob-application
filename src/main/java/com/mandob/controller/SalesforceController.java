@@ -4,7 +4,6 @@ import com.mandob.base.Projection.LookupProjection;
 import com.mandob.base.Utils.ApiPageResponse;
 import com.mandob.base.Utils.ApiResponse;
 import com.mandob.base.Utils.PageRequestVM;
-import com.mandob.domain.Salesforce;
 import com.mandob.projection.SalesForce.SalesforceListProjection;
 import com.mandob.projection.SalesForce.SalesforceMovementListProjection;
 import com.mandob.projection.SalesForce.SalesforceProjection;
@@ -58,6 +57,12 @@ public class SalesforceController {
     public List<SalesforceMovementListProjection> findAllSalesforceMovements(@PathVariable String salesforceId) {
         return salesforceService.findMovementsBy(salesforceId);
     }
+
+    @GetMapping("{salesforceId}/customers")
+    public List<String> findAllSalesforceCustomers(@PathVariable String salesforceId) {
+        return salesforceService.getCustomersOfSalesforce(salesforceId);
+    }
+
 
     @GetMapping("lookup")
     public List<LookupProjection> lookup(String id) {
