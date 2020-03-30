@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -62,6 +63,10 @@ public class CustomerService extends MasterService<Customer> {
         customer.setGovernment(route.getGovernment());
         customer.setCity(route.getCity());
         return customer;
+    }
+
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
     }
 
     @Override

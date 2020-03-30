@@ -149,7 +149,7 @@ public class SalesForceServices extends MasterService<Salesforce> {
             ScheduleVisit visit = null;
             LocalDateTime time = LocalDateTime.now();
             for (ScheduleVisit scheduleVisit: scheduleVisits){
-                LocalDateTime visitTime = scheduleVisit.getScheduleDate();
+                LocalDateTime visitTime = LocalDateTime.parse(scheduleVisit.getScheduleDate());
                 if (visitTime.getYear() == time.getYear() && visitTime.getMonth().equals(time.getMonth())  && visitTime.getDayOfMonth() == time.getDayOfMonth())
                 if (scheduleVisit.getCustomer().getId().equals(req.getCustomer())){
                     visit = scheduleVisit;
