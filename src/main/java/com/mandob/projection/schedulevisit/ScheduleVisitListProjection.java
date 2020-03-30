@@ -5,15 +5,12 @@ import com.mandob.base.Projection.LookupProjection;
 import com.mandob.domain.enums.ScheduleVisitStatus;
 import com.mandob.domain.enums.ScheduleVisitType;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 public interface ScheduleVisitListProjection extends BaseProjection {
     LookupProjection getSalesforce();
 
     LookupProjection getCustomer();
 
-    LocalDateTime getScheduleDate();
+    String getScheduleDate();
 
     ScheduleVisitType getVisitType();
 

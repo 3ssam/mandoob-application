@@ -20,8 +20,10 @@ public class ScheduleVisitController {
     private final ScheduleVisitService scheduleVisitService;
 
     @GetMapping
-    public ApiPageResponse<ScheduleVisitListProjection> findAllScheduleVisits(PageRequestVM pr) {
-        return ApiPageResponse.of(scheduleVisitService.findAll(ScheduleVisitListProjection.class, pr));
+    public ApiPageResponse<ScheduleVisitListProjection> findAllScheduleVisits(@RequestParam PageRequestVM pr,
+                                                                              @RequestParam(required = false) String salesForceId,
+                                                                              @RequestParam(required = false) String customerId) {
+        return ApiPageResponse.of(scheduleVisitService.getVisits(pr, salesForceId, customerId));
     }
 
     @GetMapping("{scheduleVisitId}")

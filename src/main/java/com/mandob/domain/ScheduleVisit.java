@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -23,7 +22,7 @@ public class ScheduleVisit extends EntityAudit {
     private Customer customer;
 
     @Column(nullable = false)
-    private LocalDateTime scheduleDate;
+    private String scheduleDate;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

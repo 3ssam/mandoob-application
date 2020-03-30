@@ -40,15 +40,15 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         validateDateGreaterThanToday(req.getScheduleDate());
         Customer customer = customerService.findById(req.getCustomer());
         Salesforce salesforce = salesforceService.findById(req.getSalesforce());
-        validateCustomerAvailability(customer, req.getScheduleDate(), null,req.getCurrentUser());
-        validateSalesforceAvailability(salesforce, req.getScheduleDate(), null,req.getCurrentUser());
+        validateCustomerAvailability(customer, req.getScheduleDate(), null, req.getCurrentUser());
+        validateSalesforceAvailability(salesforce, req.getScheduleDate(), null, req.getCurrentUser());
         ScheduleVisit scheduleVisit = new ScheduleVisit();//scheduleVisitMapper.toEntity(req);
         scheduleVisit.setCreatedBy(userService.findById(req.getCurrentUser()));
         scheduleVisit.setCreatedAt(Instant.now());
         scheduleVisit.setCustomer(customer);
         scheduleVisit.setSalesforce(salesforce);
         scheduleVisit.setVisitStatus(ScheduleVisitStatus.PLANNED);
-        scheduleVisit = createNewScheduleVisit(req,scheduleVisit);
+        scheduleVisit = createNewScheduleVisit(req, scheduleVisit);
         scheduleVisitRepository.save(scheduleVisit);
         return findById(scheduleVisit.getId(), ScheduleVisitProjection.class);
     }
@@ -61,16 +61,16 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         Salesforce salesforce = salesforceService.findById(req.getSalesforce());
         scheduleVisit.setCustomer(customer);
         scheduleVisit.setSalesforce(salesforce);
-        scheduleVisit = createNewScheduleVisit(req,scheduleVisit);
-        validateCustomerAvailability(customer, req.getScheduleDate(), scheduleVisit,req.getCurrentUser());
-        validateSalesforceAvailability(salesforce, req.getScheduleDate(), scheduleVisit,req.getCurrentUser());
+        scheduleVisit = createNewScheduleVisit(req, scheduleVisit);
+        validateCustomerAvailability(customer, req.getScheduleDate(), scheduleVisit, req.getCurrentUser());
+        validateSalesforceAvailability(salesforce, req.getScheduleDate(), scheduleVisit, req.getCurrentUser());
         scheduleVisitRepository.save(scheduleVisit);
         return findById(scheduleVisit.getId(), ScheduleVisitProjection.class);
     }
 
-    public ScheduleVisit createNewScheduleVisit(ScheduleVisitReq req,ScheduleVisit scheduleVisit){
+    public ScheduleVisit createNewScheduleVisit(ScheduleVisitReq req, ScheduleVisit scheduleVisit) {
         scheduleVisit.setPartialPayAllowed(req.getPartialPayAllowed());
-        scheduleVisit.setScheduleDate(req.getScheduleDate());
+        scheduleVisit.setScheduleDate(req.getScheduleDate().toString());
         scheduleVisit.setVisitType(req.getVisitType());
         scheduleVisit.setUpdatedBy(userService.findById(req.getCurrentUser()));
         scheduleVisit.setCompany(scheduleVisit.getCreatedBy().getCompany());
@@ -79,24 +79,24 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
     }
 
     @Transactional
-    public ScheduleVisitProjection ChangeVisiteStatus(String customerId){
+    public ScheduleVisitProjection ChangeVisiteStatus(String customerId) {
         Customer customer = customerService.findById(customerId);
         if (customer == null)
             throw new ApiValidationException("Customer Id", "not-exist");
         Salesforce salesforce = customer.getSalesforce();//customer.getAssignedTo();
         if (salesforce == null)
             throw new ApiValidationException("Salesforce Id", "not-exist");
-        ScheduleVisit scheduleVisit = scheduleVisitRepository.findBySalesforceAndCustomer(salesforce,customer);
+        ScheduleVisit scheduleVisit = scheduleVisitRepository.findBySalesforceAndCustomer(salesforce, customer);
         scheduleVisit.setVisitStatus(ScheduleVisitStatus.ACHIEVED);
         scheduleVisitRepository.save(scheduleVisit);
         return findById(scheduleVisit.getId(), ScheduleVisitProjection.class);
     }
 
-    public List<ScheduleVisitListProjection> getAllScheduleVisitForSalesForce(String salesforceId){
+    public List<ScheduleVisitListProjection> getAllScheduleVisitForSalesForce(String salesforceId) {
         Salesforce salesforce = salesforceService.findById(salesforceId);
         if (salesforce == null)
             throw new ApiValidationException("Salesforce Id", "not-exist");
-        List<ScheduleVisitListProjection> list  = scheduleVisitRepository.findAllBySalesforce(salesforce);
+        List<ScheduleVisitListProjection> list = scheduleVisitRepository.findAllBySalesforce(salesforce);
         return list;
     }
 
@@ -109,11 +109,12 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
 
     private void validateVisitOlderThanToday(ScheduleVisit scheduleVisit) {
         LocalDateTime todayEnd = LocalDateTime.now().withHour(23).withMinute(59);
-        if (scheduleVisit.getScheduleDate().isBefore(todayEnd))
+        LocalDateTime scheduleDate = LocalDateTime.parse(scheduleVisit.getScheduleDate());
+        if (scheduleDate.isBefore(todayEnd))
             throw new ApiException("Error!", "Can not update older visits");
     }
 
-    private void validateSalesforceAvailability(Salesforce salesforce, LocalDateTime date, ScheduleVisit currentVisit,String currentUser) {
+    private void validateSalesforceAvailability(Salesforce salesforce, LocalDateTime date, ScheduleVisit currentVisit, String currentUser) {
         LocalDateTime start = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(0).withMinute(0);
         LocalDateTime end = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(23).withMinute(59);
         Optional<ScheduleVisit> scheduleVisit = scheduleVisitRepository
@@ -124,7 +125,7 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         });
     }
 
-    private void validateCustomerAvailability(Customer customer, LocalDateTime date, ScheduleVisit currentVisit,String currentUser) {
+    private void validateCustomerAvailability(Customer customer, LocalDateTime date, ScheduleVisit currentVisit, String currentUser) {
         LocalDateTime start = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(0).withMinute(0);
         LocalDateTime end = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(23).withMinute(59);
         Optional<ScheduleVisit> scheduleVisit = scheduleVisitRepository
@@ -136,11 +137,30 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
     }
 
     @Transactional(readOnly = true)
-    public Page<ScheduleVisitProjection> findCurrentUserTodayVisits(PageRequestVM pr,String currentUser) {
+    public Page<ScheduleVisitProjection> findCurrentUserTodayVisits(PageRequestVM pr, String currentUser) {
         String id = userService.findById(currentUser).getId();
         LocalDateTime start = LocalDateTime.now().withHour(0).withMinute(0);
         LocalDateTime end = LocalDateTime.now().withHour(23).withMinute(59);
         return scheduleVisitRepository.findAllBySalesforceIdOrCustomerIdAndScheduleDateBetween(id, id, start, end, pr.build());
+    }
+
+    public Page<ScheduleVisitListProjection> getVisits(PageRequestVM pr, String salesForceId, String customerId) {
+        if ((salesForceId == null || salesForceId.isEmpty() || salesForceId.isBlank()) &&
+                (customerId == null || customerId.isEmpty() || customerId.isBlank()))
+            return findAll(ScheduleVisitListProjection.class, pr);
+        Page<ScheduleVisitListProjection> page = null;
+        if ((salesForceId == null || salesForceId.isEmpty() || salesForceId.isBlank())) {
+            Customer customer = customerService.findById(customerId);
+            if (customer == null)
+                throw new ApiValidationException("Customer Id", "not-exist");
+            page = scheduleVisitRepository.findAllByCustomer(customer, pr.build());
+        } else {
+            Salesforce salesforce = salesforceService.findById(salesForceId);
+            if (salesforce == null)
+                throw new ApiValidationException("Salesforce Id", "not-exist");
+            page = scheduleVisitRepository.findAllBySalesforce(salesforce, pr.build());
+        }
+        return page;
     }
 
     @Override
