@@ -19,6 +19,7 @@
 		<java.version>11</java.version>
 		<org.hashids.hashids.version>1.0.3</org.hashids.hashids.version>
 		<springfox-swagger.version>2.9.2</springfox-swagger.version>
+		<firebase-admin-version>6.8.1</firebase-admin-version>
 	</properties>
 
 	<dependencies>
@@ -101,6 +102,11 @@
 			<version>${springfox-swagger.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.google.firebase</groupId>
+			<artifactId>firebase-admin</artifactId>
+			<version>${firebase-admin-version}</version>
+		</dependency>
 
 
 		<!-- marked the embedded servlet container as provided -->
@@ -110,6 +116,11 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
 
 
 	</dependencies>
