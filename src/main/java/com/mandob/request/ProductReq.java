@@ -21,6 +21,7 @@ public class ProductReq {
 
     private String subCategory;
 
+    @NotBlank(message = "must-not-be-blank")
     private String description;
 
     @NotBlank(message = "must-not-be-blank")
@@ -35,11 +36,16 @@ public class ProductReq {
 
     private String color;
 
+    @NotNull(message = "required-field")
     private LocalDate prodDate;
 
+    @NotNull(message = "required-field")
     private LocalDate expiryDate;
 
     private String photoUrl;
+
+    @NotNull(message = "required-field")
+    private int amount;
 
     @NotBlank(message = "must-not-be-blank")
     private String currentUser;

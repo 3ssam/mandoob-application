@@ -4,7 +4,6 @@ import com.mandob.base.Projection.LookupProjection;
 import com.mandob.base.Projection.MasterProjection;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public interface ProductProjection extends MasterProjection {
     LookupProjection getCategory();
@@ -21,11 +20,15 @@ public interface ProductProjection extends MasterProjection {
 
     String getColor();
 
-    LocalDate getProdDate();
+    String getProdDate();
 
-    LocalDate getExpiryDate();
+    String getExpiryDate();
 
     String getPhotoUrl();
 
     BigDecimal getWeight();
+
+    int getAmount();
+
+    int getRemainingAmount();
 }

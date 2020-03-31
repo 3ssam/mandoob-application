@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface CategoryRepository extends MasterRepository<Category> {
     List<LookupProjection> findAllByParentIdAndCompanyId(String parentId, String companyId);
+
+
 }

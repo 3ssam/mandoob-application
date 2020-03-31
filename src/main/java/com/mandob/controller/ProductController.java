@@ -40,6 +40,11 @@ public class ProductController {
         return ApiResponse.updated(productService.update(productId, req));
     }
 
+    @DeleteMapping("{productId}")
+    public ApiResponse<String> updateProduct(@PathVariable String productId) {
+        return ApiResponse.deleted(productService.delete(productId));
+    }
+
     @GetMapping("lookup")
     public List<LookupProjection> lookup(String productId) {
         return productService.lookup(productId);

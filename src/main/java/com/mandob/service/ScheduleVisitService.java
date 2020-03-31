@@ -118,7 +118,7 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         LocalDateTime start = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(0).withMinute(0);
         LocalDateTime end = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(23).withMinute(59);
         Optional<ScheduleVisit> scheduleVisit = scheduleVisitRepository
-                .findBySalesforceIdAndScheduleDateBetweenAndCompanyId(salesforce.getId(), start, end, userService.findById(currentUser).getCompany().getId());
+                .findBySalesforceIdAndScheduleDateBetweenAndCompanyId(salesforce.getId(), start.toString(), end.toString(), userService.findById(currentUser).getCompany().getId());
         scheduleVisit.ifPresent(v -> {
             if (currentVisit == null || ObjectUtils.notEqual(currentVisit.getId(), v.getId()))
                 throw new ApiValidationException("salesforce", "already-has-visit-on-this-day");
@@ -129,7 +129,7 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         LocalDateTime start = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(0).withMinute(0);
         LocalDateTime end = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(23).withMinute(59);
         Optional<ScheduleVisit> scheduleVisit = scheduleVisitRepository
-                .findByCustomerIdAndScheduleDateBetweenAndCompanyId(customer.getId(), start, end, userService.findById(currentUser).getCompany().getId());
+                .findByCustomerIdAndScheduleDateBetweenAndCompanyId(customer.getId(), start.toString(), end.toString(), userService.findById(currentUser).getCompany().getId());
         scheduleVisit.ifPresent(v -> {
             if (currentVisit == null || ObjectUtils.notEqual(currentVisit.getId(), v.getId()))
                 throw new ApiValidationException("customer", "already-has-visit-on-this-day");

@@ -19,4 +19,16 @@ public interface ProductListProjection extends LookupProjection {
     Instant getUpdatedAt();
 
     BigDecimal getWeight();
+
+    Long getBarcode();
+
+    String getProdDate();
+
+    String getExpiryDate();
+
+    String getPhotoUrl();
+
+    int getAmount();
+
+    int getRemainingAmount();
 }

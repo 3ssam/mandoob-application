@@ -7,13 +7,15 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "product")
 public class Product extends MasterFile {
+
+    public static int count = 1;
+
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", referencedColumnName = "id", nullable = false)
@@ -44,13 +46,20 @@ public class Product extends MasterFile {
     private BigDecimal weight;
 
     @Column(name = "production_date")
-    private LocalDate prodDate;
+    private String prodDate;
 
     @Column(name = "expire_date")
-    private LocalDate expiryDate;
+    private String expiryDate;
 
     @Column(name = "photo_url")
     private String photoUrl;
+
+    @NotNull
+    @Column(name = "amount")
+    private int amount;
+
+    @Column(name = "remaining_amount")
+    private int remainingAmount;
 
     @Override
     public String toString() {
@@ -67,5 +76,9 @@ public class Product extends MasterFile {
                 ", expiryDate=" + expiryDate +
                 ", photoUrl='" + photoUrl + '\'' +
                 "}";
+    }
+
+    public static void Increase() {
+        count++;
     }
 }

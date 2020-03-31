@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ScheduleVisitRepository extends AuditRepository<ScheduleVisit> {
-    Optional<ScheduleVisit> findByCustomerIdAndScheduleDateBetweenAndCompanyId(String customerId, LocalDateTime d1, LocalDateTime d2, String companyId);
+    Optional<ScheduleVisit> findByCustomerIdAndScheduleDateBetweenAndCompanyId(String customerId, String d1, String d2, String companyId);
 
-    Optional<ScheduleVisit> findBySalesforceIdAndScheduleDateBetweenAndCompanyId(String salesforceId, LocalDateTime d1, LocalDateTime d2, String companyId);
+    Optional<ScheduleVisit> findBySalesforceIdAndScheduleDateBetweenAndCompanyId(String salesforceId, String d1, String d2, String companyId);
 
     Page<ScheduleVisitProjection> findAllBySalesforceIdOrCustomerIdAndScheduleDateBetween(String salesforce_id, String customer_id, LocalDateTime scheduleDate, LocalDateTime scheduleDate2, Pageable pageable);
 
