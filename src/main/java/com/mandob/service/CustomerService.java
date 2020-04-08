@@ -30,8 +30,8 @@ public class CustomerService extends MasterService<Customer> {
         customer.setCreatedBy(userService.findById(req.getCurrentUser()));
         customer.setCreatedAt(Instant.now());
         customer = createNewCustomer(req,customer);
-        userService.createNewUserData(customer);
         customerRepository.save(customer);
+        userService.createNewUserData(customer);
         return findById(customer.getId(), CustomerProjection.class);
     }
 

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -38,9 +39,12 @@ public class Customer extends User {
     @JoinColumn(name = "salesforce_id", referencedColumnName = "id")
     private Salesforce salesforce;
 
-    @ManyToMany(fetch = FetchType.LAZY , cascade = CascadeType.ALL, mappedBy = "customers")
-    private List<Notifications> notifications;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customers")
+    private List<Notifications> notifications = new ArrayList<>();
 
+//    @OneToMany(fetch = FetchType.LAZY , mappedBy = "customer")
+////    @JoinColumn(name = "order_id", referencedColumnName = "id")
+//    private List<Order> orders;
 
     @Override
     public String toString() {
