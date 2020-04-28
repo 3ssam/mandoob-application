@@ -4,6 +4,7 @@ import com.mandob.base.Projection.LookupProjection;
 import com.mandob.base.Utils.ApiPageResponse;
 import com.mandob.base.Utils.ApiResponse;
 import com.mandob.base.Utils.PageRequestVM;
+import com.mandob.domain.Salesforce;
 import com.mandob.projection.SalesForce.SalesforceListProjection;
 import com.mandob.projection.SalesForce.SalesforceMovementListProjection;
 import com.mandob.projection.SalesForce.SalesforceProjection;
