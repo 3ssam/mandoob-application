@@ -24,6 +24,8 @@ public class MovementReq {
 
     private String customer;
 
+//    private LocalDateTime movementDate;
+
     public MovementStatus getStatus() {
         return MovementStatus.valueOf(status);
     }
