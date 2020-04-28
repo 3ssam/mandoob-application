@@ -16,6 +16,10 @@ public interface ScheduleVisitListProjection extends BaseProjection {
 
     ScheduleVisitStatus getVisitStatus();
 
+    String getLongitude();
+
+    String getLatitude();
+
 //    default String getInvoiceNumber() {
 //        // TODO: return related invoice number
 //        return "";

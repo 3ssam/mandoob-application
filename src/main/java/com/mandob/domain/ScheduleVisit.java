@@ -13,6 +13,13 @@ import javax.persistence.*;
 @Entity
 @Table(name = "schedule_visit")
 public class ScheduleVisit extends EntityAudit {
+
+    @Column(nullable = false)
+    private String longitude;
+
+    @Column(nullable = false)
+    private String latitude;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "salesforce_id", referencedColumnName = "id", nullable = false)
     private Salesforce salesforce;

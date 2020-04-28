@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ScheduleVisitRepository extends AuditRepository<ScheduleVisit> {
-    Optional<ScheduleVisit> findByCustomerIdAndScheduleDateBetweenAndCompanyId(String customerId, String d1, String d2, String companyId);
+    Optional<ScheduleVisit> findByCustomerIdAndScheduleDateBetweenAndCompanyId(String customerId, String from, String to, String companyId);
 
-    Optional<ScheduleVisit> findBySalesforceIdAndScheduleDateBetweenAndCompanyId(String salesforceId, String d1, String d2, String companyId);
+    List<ScheduleVisit> findAllBySalesforceIdAndScheduleDateBetweenAndCompanyId(String salesforceId, String from, String ro, String companyId);
 
     Page<ScheduleVisitProjection> findAllBySalesforceIdOrCustomerIdAndScheduleDateBetween(String salesforce_id, String customer_id, LocalDateTime scheduleDate, LocalDateTime scheduleDate2, Pageable pageable);
 
@@ -24,8 +24,15 @@ public interface ScheduleVisitRepository extends AuditRepository<ScheduleVisit> 
 
     List<ScheduleVisitListProjection> findAllBySalesforce(Salesforce salesforce);
 
-
     Page<ScheduleVisitListProjection> findAllByCustomer(Customer customer, Pageable Pageable);
 
     ScheduleVisit findBySalesforceAndCustomer(Salesforce salesforce, Customer customer);
+
+//    Optional<ScheduleVisit> findBySalesforceIdAndScheduleDateBetweenAndCompanyId(String salesforceId, String d1, String d2, String companyId);
+
+    List<ScheduleVisitListProjection> findAllBySalesforceAndScheduleDateBetween(Salesforce salesforce, String from, String to);
+
+    List<ScheduleVisitListProjection> findAllBySalesforceAndCustomerAndScheduleDateBetween(Salesforce salesforce, Customer customer, String from, String to);
+
+    List<ScheduleVisitListProjection> findAllByCustomerAndSalesforce(Customer customer, Salesforce salesforce);
 }

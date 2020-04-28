@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,15 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
     private final ScheduleVisitRepository scheduleVisitRepository;
     private final UserService userService;
 
+    public static int getDurationBetweenDate(LocalDateTime d1, LocalDateTime d2) {
+        int Duration = 0;
+        if (d1.isBefore(d2))
+            Duration = d2.getHour() - d1.getHour();
+        else
+            Duration = d1.getHour() - d2.getHour();
+        return Duration;
+    }
+
     @Transactional
     public ScheduleVisitProjection create(ScheduleVisitReq req) {
         if (!userService.findById(req.getCurrentUser()).getRole().getEnName().equals("sales_manager") && !userService.findById(req.getCurrentUser()).getRole().getEnName().equals("superuser"))
@@ -41,7 +51,7 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         Customer customer = customerService.findById(req.getCustomer());
         Salesforce salesforce = salesforceService.findById(req.getSalesforce());
         validateCustomerAvailability(customer, req.getScheduleDate(), null, req.getCurrentUser());
-        validateSalesforceAvailability(salesforce, req.getScheduleDate(), null, req.getCurrentUser());
+        validateSalesforceAvailability(salesforce, req.getScheduleDate(), customer, null, req.getCurrentUser());
         ScheduleVisit scheduleVisit = new ScheduleVisit();//scheduleVisitMapper.toEntity(req);
         scheduleVisit.setCreatedBy(userService.findById(req.getCurrentUser()));
         scheduleVisit.setCreatedAt(Instant.now());
@@ -63,19 +73,9 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         scheduleVisit.setSalesforce(salesforce);
         scheduleVisit = createNewScheduleVisit(req, scheduleVisit);
         validateCustomerAvailability(customer, req.getScheduleDate(), scheduleVisit, req.getCurrentUser());
-        validateSalesforceAvailability(salesforce, req.getScheduleDate(), scheduleVisit, req.getCurrentUser());
+        validateSalesforceAvailability(salesforce, req.getScheduleDate(), customer, scheduleVisit, req.getCurrentUser());
         scheduleVisitRepository.save(scheduleVisit);
         return findById(scheduleVisit.getId(), ScheduleVisitProjection.class);
-    }
-
-    public ScheduleVisit createNewScheduleVisit(ScheduleVisitReq req, ScheduleVisit scheduleVisit) {
-        scheduleVisit.setPartialPayAllowed(req.getPartialPayAllowed());
-        scheduleVisit.setScheduleDate(req.getScheduleDate().toString());
-        scheduleVisit.setVisitType(req.getVisitType());
-        scheduleVisit.setUpdatedBy(userService.findById(req.getCurrentUser()));
-        scheduleVisit.setCompany(scheduleVisit.getCreatedBy().getCompany());
-        scheduleVisit.setUpdatedAt(Instant.now());
-        return scheduleVisit;
     }
 
     @Transactional
@@ -114,15 +114,41 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
             throw new ApiException("Error!", "Can not update older visits");
     }
 
-    private void validateSalesforceAvailability(Salesforce salesforce, LocalDateTime date, ScheduleVisit currentVisit, String currentUser) {
+    public ScheduleVisit createNewScheduleVisit(ScheduleVisitReq req, ScheduleVisit scheduleVisit) {
+        scheduleVisit.setPartialPayAllowed(req.getPartialPayAllowed());
+        scheduleVisit.setScheduleDate(req.getScheduleDate().toString());
+        scheduleVisit.setVisitType(req.getVisitType());
+        scheduleVisit.setUpdatedBy(userService.findById(req.getCurrentUser()));
+        scheduleVisit.setCompany(scheduleVisit.getCreatedBy().getCompany());
+        scheduleVisit.setUpdatedAt(Instant.now());
+        scheduleVisit.setLongitude(scheduleVisit.getCustomer().getLongitude());
+        scheduleVisit.setLatitude(scheduleVisit.getCustomer().getLatitude());
+        return scheduleVisit;
+    }
+
+    private void validateSalesforceAvailability(Salesforce salesforce, LocalDateTime date, Customer customer, ScheduleVisit currentVisit, String currentUser) {
         LocalDateTime start = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(0).withMinute(0);
         LocalDateTime end = LocalDateTime.of(date.toLocalDate(), date.toLocalTime()).withHour(23).withMinute(59);
-        Optional<ScheduleVisit> scheduleVisit = scheduleVisitRepository
-                .findBySalesforceIdAndScheduleDateBetweenAndCompanyId(salesforce.getId(), start.toString(), end.toString(), userService.findById(currentUser).getCompany().getId());
-        scheduleVisit.ifPresent(v -> {
-            if (currentVisit == null || ObjectUtils.notEqual(currentVisit.getId(), v.getId()))
+        List<ScheduleVisit> scheduleVisit = scheduleVisitRepository
+                .findAllBySalesforceIdAndScheduleDateBetweenAndCompanyId(salesforce.getId(), start.toString(), end.toString(), userService.findById(currentUser).getCompany().getId());
+//        scheduleVisit.ifPresent(v -> {
+//            if (currentVisit == null || ObjectUtils.notEqual(currentVisit.getId(), v.getId()))
+//                throw new ApiValidationException("salesforce", "already-has-visit-on-this-day");
+//        });
+        for (int i = 0; i < scheduleVisit.size(); i++) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            LocalDateTime to = null;
+            try {
+                to = LocalDateTime.parse(scheduleVisit.get(i).getScheduleDate(), formatter);
+            } catch (Exception e) {
+                to = LocalDateTime.parse(scheduleVisit.get(i).getScheduleDate());
+            }
+            int duration = getDurationBetweenDate(date, to);
+            if (duration < 2 || scheduleVisit.get(i).getCustomer().getId().equalsIgnoreCase(customer.getId()))
                 throw new ApiValidationException("salesforce", "already-has-visit-on-this-day");
-        });
+            //if (date )
+        }
+
     }
 
     private void validateCustomerAvailability(Customer customer, LocalDateTime date, ScheduleVisit currentVisit, String currentUser) {
@@ -167,4 +193,6 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
     protected BaseRepository<ScheduleVisit> getRepository() {
         return scheduleVisitRepository;
     }
+
+
 }

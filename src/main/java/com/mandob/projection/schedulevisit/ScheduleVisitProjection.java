@@ -18,6 +18,10 @@ public interface ScheduleVisitProjection extends AuditProjection {
 
     ScheduleVisitStatus getVisitStatus();
 
+    String getLongitude();
+
+    String getLatitude();
+
 //    default String getInvoiceNumber() {
 //        // TODO: return related invoice number
 //        return "";
