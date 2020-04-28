@@ -12,4 +12,9 @@ public class PageRequestVM {
         int pageNumber = StringUtils.isNumeric(page) ? Integer.parseInt(page) : 0;
         return PageRequest.of(Math.max(0, --pageNumber), 20);
     }
+
+    public PageRequest buildWithPage(String page_Number) {
+        int pageNumber = StringUtils.isNumeric(page_Number) ? Integer.parseInt(page_Number) : 0;
+        return PageRequest.of(Math.max(0, --pageNumber), 20);
+    }
 }
