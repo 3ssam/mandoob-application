@@ -44,4 +44,5 @@ public class CustomerController {
     public List<LookupProjection> lookup(String customerId) {
         return customerService.lookup(customerId);
     }
+
 }

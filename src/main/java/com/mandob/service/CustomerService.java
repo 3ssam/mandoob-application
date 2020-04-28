@@ -62,6 +62,8 @@ public class CustomerService extends MasterService<Customer> {
         customer.setSalesforce(route.getSalesforce());
         customer.setGovernment(route.getGovernment());
         customer.setCity(route.getCity());
+        customer.setLongitude(req.getLongitude());
+        customer.setLatitude(req.getLatitude());
         return customer;
     }
 

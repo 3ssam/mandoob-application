@@ -3,9 +3,17 @@ package com.mandob.request;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 public class CustomerReq {
+
+    @NotNull(message = "must-not-be-null")
+    private String longitude;
+
+    @NotNull(message = "must-not-be-null")
+    private String latitude;
+
     @NotBlank(message = "must-not-be-null")
     private String arName;
 

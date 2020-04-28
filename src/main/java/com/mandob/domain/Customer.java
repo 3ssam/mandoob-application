@@ -14,6 +14,13 @@ import java.util.List;
 @Entity
 @Table(name = "customer")
 public class Customer extends User {
+
+    @Column(nullable = false)
+    private String longitude;
+
+    @Column(nullable = false)
+    private String latitude;
+
     @Column(nullable = false, length = 13)
     private String phoneNumber1;
 
@@ -42,9 +49,9 @@ public class Customer extends User {
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customers")
     private List<Notifications> notifications = new ArrayList<>();
 
-//    @OneToMany(fetch = FetchType.LAZY , mappedBy = "customer")
-////    @JoinColumn(name = "order_id", referencedColumnName = "id")
-//    private List<Order> orders;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+    //@JoinColumn(name = "order_id", referencedColumnName = "id")
+    private List<Order> orders;
 
     @Override
     public String toString() {
