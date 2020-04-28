@@ -142,18 +142,21 @@ public class SalesForceServices extends MasterService<Salesforce> {
         movement.setLatitude(req.getLatitude());
         movement.setLongitude(req.getLongitude());
         movement.setStatus(req.getStatus());
+        LocalDateTime time = LocalDateTime.now();
+
         if (req.getStatus().name().equals("CHECKIN")) {
             if (req.getCustomer() == null)
                 throw new ApiValidationException("salesforceRole", "invalid-value");
             List<ScheduleVisit> scheduleVisits = salesforce.getScheduleVisits();
             ScheduleVisit visit = null;
-            LocalDateTime time = LocalDateTime.now();
-            for (ScheduleVisit scheduleVisit: scheduleVisits){
+            //LocalDateTime time = req.getMovementDate();
+            for (ScheduleVisit scheduleVisit : scheduleVisits) {
                 LocalDateTime visitTime = LocalDateTime.parse(scheduleVisit.getScheduleDate());
-                if (visitTime.getYear() == time.getYear() && visitTime.getMonth().equals(time.getMonth())  && visitTime.getDayOfMonth() == time.getDayOfMonth())
-                if (scheduleVisit.getCustomer().getId().equals(req.getCustomer())){
-                    visit = scheduleVisit;
-                    break;
+                if (visitTime.getYear() == time.getYear() && visitTime.getMonth().equals(time.getMonth()) && visitTime.getDayOfMonth() == time.getDayOfMonth()) {
+                    if (scheduleVisit.getCustomer().getId().equals(req.getCustomer())) {
+                        visit = scheduleVisit;
+                        break;
+                    }
                 }
             }
             if (visit != null) {
@@ -162,6 +165,15 @@ public class SalesForceServices extends MasterService<Salesforce> {
             }
 
         }
+
+        if (req.getCustomer() != null) {
+            for (int i = 0; i < salesforce.getCustomers().size(); i++) {
+                String customerId = salesforce.getCustomers().get(i).getId();
+                if (req.getCustomer().equalsIgnoreCase(customerId))
+                    movement.setCustomer(salesforce.getCustomers().get(i));
+            }
+        }
+        movement.setDateTime(time);
         movementRepository.save(movement);
     }
 

@@ -34,10 +34,10 @@ public class SalesforceMovement extends BaseEntity {
     @Column(nullable = false)
     private MovementStatus status;
 
-    @PrePersist
-    private void updateDateTime() {
-        this.dateTime = LocalDateTime.now();
-    }
+//    @PrePersist
+//    private void updateDateTime() {
+//        this.dateTime = LocalDateTime.now();
+//    }
 
     @Override
     public String toString() {
