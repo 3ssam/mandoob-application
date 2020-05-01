@@ -7,6 +7,7 @@ import com.mandob.base.service.AuditService;
 import com.mandob.domain.Customer;
 import com.mandob.domain.Order;
 import com.mandob.domain.Product;
+import com.mandob.domain.enums.OrderStatus;
 import com.mandob.projection.Order.OrderListProjection;
 import com.mandob.projection.Order.OrderProjection;
 import com.mandob.repository.OrderRepository;
@@ -78,8 +79,9 @@ public class OrderService extends AuditService<Order> {
         order.setProducts(products);
         order.setOrderAmount(amounts);
         order.calculateTotalPrice();
+        order.setStatus(OrderStatus.NEW);
         orderRepository.save(order);
-        return findById(order.getId(), OrderProjection.class);
+        return orderRepository.findAllById(order.getId());
     }
 
     @Override

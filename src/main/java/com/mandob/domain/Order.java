@@ -1,6 +1,7 @@
 package com.mandob.domain;
 
 import com.mandob.base.domain.EntityAudit;
+import com.mandob.domain.enums.OrderStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,6 +29,10 @@ public class Order extends EntityAudit {
 
     @Transient
     private List<Product> tempProducts = new ArrayList<>();
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private OrderStatus status;
 
 
     @ElementCollection
