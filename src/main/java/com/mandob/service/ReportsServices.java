@@ -3,6 +3,7 @@ package com.mandob.service;
 import com.mandob.base.exception.ApiValidationException;
 import com.mandob.domain.Company;
 import com.mandob.domain.Customer;
+import com.mandob.domain.Order;
 import com.mandob.domain.Salesforce;
 import com.mandob.domain.enums.SalesforceRole;
 import com.mandob.projection.Customer.CustomerListProjection;
@@ -10,15 +11,12 @@ import com.mandob.projection.SalesForce.SalesforceListProjection;
 import com.mandob.projection.SalesForce.SalesforceMovementListProjection;
 import com.mandob.projection.schedulevisit.ScheduleVisitListProjection;
 import com.mandob.repository.*;
-import com.mandob.response.DistanceVisitReport;
-import com.mandob.response.ScheduleVisitReport;
-import com.mandob.response.TimeVisitReport;
-import com.mandob.response.VisitReport;
+import com.mandob.response.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +28,7 @@ public class ReportsServices {
     private CompanyRepository companyRepository;
     private ScheduleVisitRepository visitRepository;
     private SalesforceMovementRepository movementRepository;
+    private OrderRepository orderRepository;
 
     public static double distance(double lat1,
                                   double lat2, double lon1,
@@ -116,7 +115,7 @@ public class ReportsServices {
             from = LocalDate.of(2018, 1, 1);
         if (to == null)
             //to = LocalDate.now();
-            to = LocalDate.of(2021, 1, 1);
+            to = LocalDate.of(2030, 1, 1);
         for (int i = 0; i < salesforces.size(); i++) {
             ScheduleVisitReport salesforceReport = new ScheduleVisitReport();
             salesforceReport.setSalesforceName(salesforces.get(i).getArName());
@@ -250,5 +249,104 @@ public class ReportsServices {
         return customers;
     }
 
+    public OrderReport getOrdersReport(String orderId, String salesagentId,
+                                       String customerId,
+                                       String start,
+                                       String end) {
+
+        if (orderId != null)
+            return getOneReport(orderId);
+
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        //LocalDateTime time = LocalDateTime.parse(start,format);
+        Instant from = null;
+        Instant to = null;
+        Salesforce salesforce = null;
+        List<Customer> customers = new ArrayList<>();
+        if (start != null)
+            from = LocalDateTime.parse(start, format).minusHours(2).toInstant(ZoneOffset.UTC);
+        else
+            from = LocalDateTime.now().minusYears(1L).toInstant(ZoneOffset.UTC);
+        if (end != null)
+            to = LocalDateTime.parse(end, format).minusHours(2).toInstant(ZoneOffset.UTC);
+        else
+            to = LocalDateTime.now().plusYears(20L).toInstant(ZoneOffset.UTC);
+        if (salesagentId != null) {
+            salesforce = salesforceRepository.getOne(salesagentId);
+            if (salesforce == null)
+                throw new ApiValidationException("salesforce Id", "salesforce-id-is-not-vaild");
+            customers = salesforce.getCustomers();
+        } else if (customerId != null) {
+            Customer customer = customerRepository.getOne(customerId);
+            if (customer == null)
+                throw new ApiValidationException("Customer Id", "customer-id-is-not-vaild");
+            customers.add(customer);
+        }
+        return createOrderReport(customers, from, to);
+    }
+
+    private OrderReport createOrderReport(List<Customer> customers, Instant from, Instant to) {
+        OrderReport report = new OrderReport();
+        List<OrderItem> orderItems = new ArrayList<>();
+
+        double sumOrders = 0.0;
+        int countOrders = 0;
+        for (int i = 0; i < customers.size(); i++) {
+            OrderReport tempReport = getOrderDetails(customers.get(i), from, to);
+            orderItems.addAll(tempReport.getOrders());
+            sumOrders += tempReport.getTotalOfOrders();
+            countOrders += tempReport.getNumberOfOrders();
+        }
+        report.setNumberOfOrders(countOrders);
+        report.setTotalOfOrders(sumOrders);
+        report.setOrders(orderItems);
+        return report;
+    }
+
+    private OrderReport getOrderDetails(Customer customer, Instant from, Instant to) {
+        List<OrderItem> orderItems = new ArrayList<>();
+        double sumOrders = 0.0;
+        int countOrders = 0;
+        List<Order> orders = orderRepository.findByCustomerAndCreatedAtBetween(customer, from, to);
+        for (int i = 0; i < orders.size(); i++) {
+            OrderItem orderItem = new OrderItem();
+            sumOrders += orders.get(i).getTotalOrder();
+            countOrders++;
+            orderItem.setTotalOfOrder(String.valueOf(orders.get(i).getTotalOrder()));
+            orderItem.setOrderDate(orders.get(i).getCreatedAt().plus(Duration.ofHours(2)).toString());
+            orderItem.setOrderId(orders.get(i).getId());
+            orderItem.setCustomerArabicName(customer.getArName());
+            orderItem.setCustomerEnglishName(customer.getEnName());
+            orderItem.setStatus(orders.get(i).getStatus().toString());
+            orderItem.setSalesAgentArabicName(customer.getSalesforce().getArName());
+            orderItem.setSalesAgentEnglishName(customer.getSalesforce().getEnName());
+            orderItems.add(orderItem);
+        }
+        OrderReport report = new OrderReport();
+        report.setNumberOfOrders(countOrders);
+        report.setTotalOfOrders(sumOrders);
+        report.setOrders(orderItems);
+        return report;
+    }
+
+    private OrderReport getOneReport(String orderId) {
+        Order order = orderRepository.findById(orderId).get();
+        OrderReport report = new OrderReport();
+        List<OrderItem> orderItems = new ArrayList<>();
+        OrderItem orderItem = new OrderItem();
+        orderItem.setTotalOfOrder(String.valueOf(order.getTotalOrder()));
+        orderItem.setOrderDate(order.getCreatedAt().plus(Duration.ofHours(2)).toString());
+        orderItem.setOrderId(order.getId());
+        orderItem.setCustomerArabicName(order.getCustomer().getArName());
+        orderItem.setCustomerEnglishName(order.getCustomer().getEnName());
+        orderItem.setStatus(order.getStatus().toString());
+        orderItem.setSalesAgentArabicName(order.getCustomer().getSalesforce().getArName());
+        orderItem.setSalesAgentEnglishName(order.getCustomer().getSalesforce().getEnName());
+        orderItems.add(orderItem);
+        report.setNumberOfOrders(1);
+        report.setTotalOfOrders(order.getTotalOrder());
+        report.setOrders(orderItems);
+        return report;
+    }
 
 }

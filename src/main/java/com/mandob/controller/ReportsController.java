@@ -2,6 +2,7 @@ package com.mandob.controller;
 
 import com.mandob.projection.Customer.CustomerListProjection;
 import com.mandob.projection.SalesForce.SalesforceListProjection;
+import com.mandob.response.OrderReport;
 import com.mandob.response.ScheduleVisitReport;
 import com.mandob.service.ReportsServices;
 import lombok.AllArgsConstructor;
@@ -43,6 +44,15 @@ public class ReportsController {
                                                             @RequestParam(required = false) String from,
                                                             @RequestParam(required = false) String to) {
         return reportsServices.getVisitReport(companyId, salesagentId, customerId, salesagentCode, from, to, "DISTANCE");
+    }
+
+    @GetMapping("orders")
+    public OrderReport getOrdersReport(@RequestParam(required = false) String orderId,
+                                       @RequestParam(required = false) String salesagentId,
+                                       @RequestParam(required = false) String customerId,
+                                       @RequestParam(required = false) String from,
+                                       @RequestParam(required = false) String to) {
+        return reportsServices.getOrdersReport(orderId, salesagentId, customerId, from, to);
     }
 
 
