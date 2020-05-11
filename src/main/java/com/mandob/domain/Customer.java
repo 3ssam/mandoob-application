@@ -50,8 +50,12 @@ public class Customer extends User {
     private List<Notifications> notifications = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
-    //@JoinColumn(name = "order_id", referencedColumnName = "id")
     private List<Order> orders;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+    private List<Invoice> invoices;
+
+    private double Balance = 0;
 
     @Override
     public String toString() {
