@@ -34,6 +34,9 @@ public class Order extends EntityAudit {
     @Column(nullable = false)
     private OrderStatus status;
 
+    @OneToOne(mappedBy = "order")
+    private Invoice invoice;
+
 
     @ElementCollection
     @CollectionTable(

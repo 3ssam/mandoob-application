@@ -5,11 +5,15 @@ import com.mandob.base.exception.ApiValidationException;
 import com.mandob.base.repository.BaseRepository;
 import com.mandob.base.service.AuditService;
 import com.mandob.domain.Customer;
+import com.mandob.domain.Invoice;
 import com.mandob.domain.Order;
 import com.mandob.domain.Product;
+import com.mandob.domain.enums.InvoiceStatus;
 import com.mandob.domain.enums.OrderStatus;
+import com.mandob.domain.enums.PayingType;
 import com.mandob.projection.Order.OrderListProjection;
 import com.mandob.projection.Order.OrderProjection;
+import com.mandob.repository.InvoiceRepository;
 import com.mandob.repository.OrderRepository;
 import com.mandob.repository.ProductRepository;
 import com.mandob.request.OrderReq;
@@ -29,6 +33,8 @@ import java.util.List;
 public class OrderService extends AuditService<Order> {
     @Autowired
     private final OrderRepository orderRepository;
+    @Autowired
+    private final InvoiceRepository invoiceRepository;
     private final ProductRepository productRepository;
     private final CustomerService customerService;
     private final UserService userService;
@@ -80,8 +86,36 @@ public class OrderService extends AuditService<Order> {
         order.setOrderAmount(amounts);
         order.calculateTotalPrice();
         order.setStatus(OrderStatus.NEW);
+
         orderRepository.save(order);
+        createInvoice(order, req);
         return orderRepository.findAllById(order.getId());
+    }
+
+    @Transactional
+    protected void createInvoice(Order order, OrderReq req) {
+        Invoice invoice = new Invoice();
+        invoice.setAmountPaid(0);
+        invoice.setTotalAmount(order.getTotalOrder());
+        invoice.setAmountRemain(order.getTotalOrder());
+        invoice.setStatus(InvoiceStatus.OPEN);
+        invoice.setPayingType(req.getPayingType());
+        invoice.setInstallment(req.isInstallment());
+        invoice.setUpdatedAt(order.getUpdatedAt());
+        invoice.setCreatedAt(order.getCreatedAt());
+        invoice.setCreatedBy(order.getCreatedBy());
+        invoice.setUpdatedBy(order.getCreatedBy());
+        invoice.setCompany(order.getCompany());
+        if (invoice.isInstallment())
+            invoice.setInstallmentNumber(Integer.parseInt(req.getInstallmentNumber()));
+        invoice.setOrder(order);
+        invoice.setCustomer(order.getCustomer());
+        invoice.setSalesforce(order.getCustomer().getSalesforce());
+        if (invoice.getPayingType().equals(PayingType.CASH))
+            invoice.setAmountCashcollection(invoice.getTotalAmount());
+        else
+            invoice.setAmountCashcollection(Double.parseDouble(req.getAmountPaid()));
+        invoiceRepository.save(invoice);
     }
 
     @Override
