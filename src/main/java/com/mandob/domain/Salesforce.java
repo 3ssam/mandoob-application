@@ -48,10 +48,14 @@ public class Salesforce extends User {
     private Set<SalesforceMovement> movements = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
-    private List<Customer> customers  = new ArrayList<>();
+    private List<Customer> customers = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
-    private List<ScheduleVisit> scheduleVisits  = new ArrayList<>();
+    private List<ScheduleVisit> scheduleVisits = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
+    private List<Invoice> invoices = new ArrayList<>();
+
 
     @Override
     public String toString() {
