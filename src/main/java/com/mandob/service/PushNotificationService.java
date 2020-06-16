@@ -3,11 +3,14 @@ package com.mandob.service;
 import com.mandob.base.exception.ApiValidationException;
 import com.mandob.domain.Customer;
 import com.mandob.domain.Notifications;
+import com.mandob.domain.Salesforce;
 import com.mandob.domain.enums.NotificationsStatus;
 import com.mandob.firebase.FCMService;
 import com.mandob.projection.Notification.NotificationListProjection;
 import com.mandob.projection.Notification.NotificationProjection;
+import com.mandob.repository.CustomerRepository;
 import com.mandob.repository.NotificationRepository;
+import com.mandob.repository.SalesforceRepository;
 import com.mandob.request.PushNotificationReq;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -18,6 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +34,9 @@ public class PushNotificationService {
     @Value("#{${app.notifications.defaults}}")
     private Map<String, String> defaults;
 
-    private final CustomerService customerService;
+    private final CustomerRepository customerRepository;
+    private final SalesforceRepository salesforceRepository;
+
 
     private final NotificationRepository notificationRepository;
 
@@ -89,48 +95,91 @@ public class PushNotificationService {
     }
 
 
-    public List<NotificationListProjection> getNewNotifications(String customerId){
-        Customer customer = customerService.findById(customerId);
-        if (customer == null)
-            throw new ApiValidationException("Customer Id", "not-exist");
-        return notificationRepository.findAllByCustomersAndState(customer, NotificationsStatus.NEW);
+    public List<NotificationListProjection> getNewNotifications(String customerId, String salesagentId) {
+        if (customerId != null) {
+            Customer customer = customerRepository.getOne(customerId);
+            if (customer == null)
+                throw new ApiValidationException("Customer Id", "not-exist");
+            return notificationRepository.findAllByCustomersAndState(customer, NotificationsStatus.NEW);
+        } else if (salesagentId != null) {
+            Salesforce salesforce = salesforceRepository.getOne(salesagentId);
+            if (salesforce == null)
+                throw new ApiValidationException("Salesforce Id", "not-exist");
+            return notificationRepository.findAllBySalesforcesAndState(salesforce, NotificationsStatus.NEW);
+        }
+        return null;
     }
 
     @Transactional
-    public NotificationProjection getNotification(String id){
+    public NotificationProjection getNotification(String id) {
         NotificationProjection notification = notificationRepository.getById(id);
         if (notification == null)
             throw new ApiValidationException("Notification Id", "not-exist");
+        Notifications oneNotification = notificationRepository.getOne(id);
+        oneNotification.setState(NotificationsStatus.READ);
+        notificationRepository.save(oneNotification);
         return notification;
     }
 
     @Transactional
-    public NotificationProjection CreateNotification(PushNotificationReq req){
+    public NotificationProjection CreateNotification(PushNotificationReq req, String userType, String customerId, String salesagentId) {
         Notifications notification = new Notifications();
         notification.setState(NotificationsStatus.NEW);
         notification.setMessage(req.getMessage());
         notification.setTitle(req.getTitle());
         notification.setScheduleDate(LocalDateTime.now().toString());
-        notification.setCustomers(customerService.getAllCustomers());
+        if (userType.equalsIgnoreCase("customers")) {
+            List<Customer> customers = new ArrayList<>();
+            if (customerId != null) {
+                Customer customer = customerRepository.getOne(customerId);
+                if (customer == null)
+                    throw new ApiValidationException("Customer Id", "not-exist");
+                customers.add(customer);
+            } else
+                customers = customerRepository.findAll();
+            notification.setCustomers(customers);
+        } else if (userType.equalsIgnoreCase("salesforces")) {
+            List<Salesforce> salesforces = new ArrayList<>();
+            if (salesagentId != null) {
+                Salesforce salesforce = salesforceRepository.getOne(salesagentId);
+                if (salesforce == null)
+                    throw new ApiValidationException("Salesforce Id", "not-exist");
+                salesforces.add(salesforce);
+            } else
+                salesforces = salesforceRepository.findAll();
+            notification.setSalesforces(salesforces);
+        } else {
+            notification.setSalesforces(salesforceRepository.findAll());
+            notification.setCustomers(customerRepository.findAll());
+        }
         notificationRepository.save(notification);
         NotificationProjection notificationObject = notificationRepository.getById(notification.getId());
         return notificationObject;
     }
 
     @Transactional
-    public String deleteNotification(String customerId,String id){
-        Customer customer = customerService.findById(customerId);
-        if (customer == null)
-            throw new ApiValidationException("Customer Id", "not-exist");
+    public String deleteNotification(String id, String customerId, String salesagentId) {
         Notifications notification = notificationRepository.getOne(id);
         if (notification == null)
             throw new ApiValidationException("Notification Id", "not-exist");
-        if (notification.getCustomers().remove(customer)) {
-            notificationRepository.save(notification);
-            return "Success Process";
+        if (customerId != null) {
+            Customer customer = customerRepository.getOne(customerId);
+            if (customer == null)
+                throw new ApiValidationException("Customer Id", "not-exist");
+            if (notification.getCustomers().remove(customer)) {
+                notificationRepository.save(notification);
+                return "Success Process";
+            }
+        } else if (salesagentId != null) {
+            Salesforce salesforce = salesforceRepository.getOne(salesagentId);
+            if (salesforce == null)
+                throw new ApiValidationException("Salesforce Id", "not-exist");
+            if (notification.getSalesforces().remove(salesforce)) {
+                notificationRepository.save(notification);
+                return "Success Process";
+            }
         }
-        else
-            return "it is not deleted yet";
+        return "it is not deleted yet";
     }
 
 }

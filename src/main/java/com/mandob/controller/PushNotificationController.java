@@ -21,9 +21,12 @@ public class PushNotificationController {
 
 
     @PostMapping()
-    public NotificationProjection sendNotification(@RequestBody PushNotificationReq request) {
+    public NotificationProjection sendNotification(@RequestBody PushNotificationReq request,
+                                                   @RequestParam(required = false) String customerId,
+                                                   @RequestParam(required = false) String salesagentId,
+                                                   @RequestParam(defaultValue = "ALL") String userType) {
         //pushNotificationService.sendPushNotificationWithoutData(request);
-        return pushNotificationService.CreateNotification(request);
+        return pushNotificationService.CreateNotification(request, userType, customerId, salesagentId);
     }
 
     @PostMapping("/token")
@@ -39,9 +42,11 @@ public class PushNotificationController {
     }
 
     @GetMapping()
-    public List<NotificationListProjection> getNotifications(@RequestParam() String customerId) {
+    public List<NotificationListProjection> getNotifications(@RequestParam(required = false) String customerId,
+                                                             @RequestParam(required = false) String salesagentId
+    ) {
         //pushNotificationService.sendSamplePushNotification();
-        return pushNotificationService.getNewNotifications(customerId);
+        return pushNotificationService.getNewNotifications(customerId, salesagentId);
     }
 
     @GetMapping("{notificationId}")
@@ -50,8 +55,10 @@ public class PushNotificationController {
     }
 
     @DeleteMapping("{notificationId}")
-    public String deleteNotification(@PathVariable("notificationId") String notificationId,@RequestParam String customerId) {
-        return pushNotificationService.deleteNotification(customerId,notificationId);
+    public String deleteNotification(@PathVariable("notificationId") String notificationId,
+                                     @RequestParam(required = false) String customerId,
+                                     @RequestParam(required = false) String salesagentId) {
+        return pushNotificationService.deleteNotification(notificationId, customerId, salesagentId);
     }
 
 

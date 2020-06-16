@@ -22,8 +22,11 @@ public class Notifications extends BaseEntity {
     @Column(nullable = false)
     private String scheduleDate;
 
-    @ManyToMany(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Customer> customers;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Salesforce> salesforces;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
