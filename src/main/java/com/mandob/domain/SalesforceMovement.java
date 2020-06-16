@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -19,6 +18,9 @@ public class SalesforceMovement extends BaseEntity {
     @Column(nullable = false)
     private String latitude;
 
+    @Column(nullable = false)
+    private String address;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "salesforce_id", referencedColumnName = "id")
     private Salesforce salesforce;
@@ -27,8 +29,8 @@ public class SalesforceMovement extends BaseEntity {
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 
-    @Column(nullable = false)
-    private LocalDateTime dateTime;
+    @Column(nullable = false, name = "date_time")
+    private String dateTime;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

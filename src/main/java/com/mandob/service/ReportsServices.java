@@ -174,13 +174,13 @@ public class ReportsServices {
         LocalDateTime checkOut = null;
         int duration = -1;
         int delay = -1;
-        List<SalesforceMovementListProjection> movements = movementRepository.findBySalesforceAndCustomerAndAndDateTimeBetween(salesforce, customer, start, end);
+        List<SalesforceMovementListProjection> movements = movementRepository.findBySalesforceAndCustomerAndAndDateTimeBetween(salesforce, customer, start.toString(), end.toString());
         for (int i = 0; i < movements.size(); i++) {
             if ("CHECKIN".equalsIgnoreCase(movements.get(i).getStatus())) {
-                checkIn = movements.get(i).getDateTime();
+                checkIn = LocalDateTime.parse(movements.get(i).getDateTime());
                 visitReport.setCheckInDateTime(checkIn.toString());
             } else if ("CHECKOUT".equalsIgnoreCase(movements.get(i).getStatus())) {
-                checkOut = movements.get(i).getDateTime();
+                checkOut = LocalDateTime.parse(movements.get(i).getDateTime());
                 visitReport.setCheckOutDateTime(checkOut.toString());
             }
         }
@@ -214,7 +214,7 @@ public class ReportsServices {
         String checkOutLat = null;
 
         double distance = -1;
-        List<SalesforceMovementListProjection> movements = movementRepository.findBySalesforceAndCustomerAndAndDateTimeBetween(salesforce, customer, start, end);
+        List<SalesforceMovementListProjection> movements = movementRepository.findBySalesforceAndCustomerAndAndDateTimeBetween(salesforce, customer, start.toString(), end.toString());
         for (int i = 0; i < movements.size(); i++) {
             if ("CHECKIN".equalsIgnoreCase(movements.get(i).getStatus())) {
                 checkInLong = movements.get(i).getLongitude();
@@ -266,7 +266,7 @@ public class ReportsServices {
         if (start != null)
             from = LocalDateTime.parse(start, format).minusHours(2).toInstant(ZoneOffset.UTC);
         else
-            from = LocalDateTime.now().minusYears(1L).toInstant(ZoneOffset.UTC);
+            from = LocalDateTime.now().minusYears(10L).toInstant(ZoneOffset.UTC);
         if (end != null)
             to = LocalDateTime.parse(end, format).minusHours(2).toInstant(ZoneOffset.UTC);
         else

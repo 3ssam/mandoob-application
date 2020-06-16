@@ -16,6 +16,9 @@ public class MovementReq {
     private String latitude;
 
     @NotNull(message = "must-not-be-null")
+    private String address;
+
+    @NotNull(message = "must-not-be-null")
     @Pattern(regexp = "START|END|CHECKIN|CHECKOUT|SCHEDULE", message = "invalid-value")
     private String status;
 

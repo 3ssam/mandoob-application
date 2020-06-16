@@ -3,9 +3,7 @@ package com.mandob.projection.SalesForce;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.mandob.projection.Customer.CustomerListProjection;
 
-import java.time.LocalDateTime;
-
-@JsonPropertyOrder({"id", "longitude", "latitude", "dateTime", "status","customer"})
+@JsonPropertyOrder({"id", "longitude", "latitude", "address", "dateTime", "status", "customer", "salesforce"})
 public interface SalesforceMovementListProjection {
     String getId();
 
@@ -13,9 +11,14 @@ public interface SalesforceMovementListProjection {
 
     String getLatitude();
 
-    LocalDateTime getDateTime();
+    String getAddress();
+
+    String getDateTime();
 
     String getStatus();
 
     CustomerListProjection getCustomer();
+
+    SalesforceListProjection getsalesforce();
+
 }
