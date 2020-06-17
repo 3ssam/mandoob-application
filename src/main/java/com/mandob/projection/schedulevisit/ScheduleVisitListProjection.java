@@ -12,6 +12,8 @@ public interface ScheduleVisitListProjection extends BaseProjection {
 
     String getScheduleDate();
 
+    String getAddress();
+
     ScheduleVisitType getVisitType();
 
     ScheduleVisitStatus getVisitStatus();

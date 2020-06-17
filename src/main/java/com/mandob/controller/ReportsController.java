@@ -7,6 +7,8 @@ import com.mandob.response.OrderReport;
 import com.mandob.response.ScheduleVisitReport;
 import com.mandob.service.ReportsServices;
 import lombok.AllArgsConstructor;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -62,6 +64,18 @@ public class ReportsController {
                                              @RequestParam(required = false) String from,
                                              @RequestParam(required = false) String to) {
         return reportsServices.getMovementsReport(salesagentId, from, to);
+    }
+
+    @GetMapping("download")
+    public ResponseEntity<Resource> downloadReport(@RequestParam(required = false) String companyId,
+                                                   @RequestParam(required = false) String orderId,
+                                                   @RequestParam(required = false) String salesagentId,
+                                                   @RequestParam(required = false) String salesagentCode,
+                                                   @RequestParam(required = false) String customerId,
+                                                   @RequestParam(required = false) String from,
+                                                   @RequestParam(required = false) String to,
+                                                   @RequestParam String reportType) {
+        return reportsServices.DownloadReport(companyId, orderId, salesagentId, salesagentCode, customerId, from, to, reportType);
     }
 
 

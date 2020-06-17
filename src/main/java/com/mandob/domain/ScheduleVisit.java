@@ -20,6 +20,9 @@ public class ScheduleVisit extends EntityAudit {
     @Column(nullable = false)
     private String latitude;
 
+    @Column(nullable = false)
+    private String address;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "salesforce_id", referencedColumnName = "id", nullable = false)
     private Salesforce salesforce;
