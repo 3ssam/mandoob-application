@@ -17,7 +17,10 @@ public interface SalesforceMovementRepository extends BaseRepository<SalesforceM
 
     List<SalesforceMovementListProjection> findBySalesforceAndCustomerAndAndDateTimeBetween(Salesforce salesforce, Customer customer, String start, String end);
 
-    List<SalesforceMovementListProjection> findAllByDateTimeBetween(String start, String end);
+    List<SalesforceMovement> findAllByDateTimeBetween(String start, String end);
+
+    List<SalesforceMovement> findBySalesforceIdAndDateTimeBetween(String salesforceId, String start, String end);
+
 
 //    @Query(value = "select * from salesforce_movement as firsttable inner join\n" +
 //            "(select salesforce_id as second_id ,max(date_time) as Max_Date from salesforce_movement group by salesforce_id) secondtable\n" +

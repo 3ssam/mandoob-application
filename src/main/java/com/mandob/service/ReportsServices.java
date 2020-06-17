@@ -1,10 +1,7 @@
 package com.mandob.service;
 
 import com.mandob.base.exception.ApiValidationException;
-import com.mandob.domain.Company;
-import com.mandob.domain.Customer;
-import com.mandob.domain.Order;
-import com.mandob.domain.Salesforce;
+import com.mandob.domain.*;
 import com.mandob.domain.enums.SalesforceRole;
 import com.mandob.projection.Customer.CustomerListProjection;
 import com.mandob.projection.SalesForce.SalesforceListProjection;
@@ -29,6 +26,7 @@ public class ReportsServices {
     private ScheduleVisitRepository visitRepository;
     private SalesforceMovementRepository movementRepository;
     private OrderRepository orderRepository;
+
 
     public static double distance(double lat1,
                                   double lat2, double lon1,
@@ -348,5 +346,45 @@ public class ReportsServices {
         report.setOrders(orderItems);
         return report;
     }
+
+
+    public MovementReport getMovementsReport(String salesagentId,
+                                             String start,
+                                             String end) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        if (start == null)
+            start = LocalDate.now().minusYears(20).format(formatter).toString();
+        if (end == null)
+            end = LocalDate.now().format(formatter).toString();
+        LocalDate localDate = LocalDate.parse(start, formatter);
+        LocalDateTime from = localDate.atTime(0, 0, 0);
+        localDate = LocalDate.parse(end, formatter);
+        LocalDateTime to = localDate.atTime(23, 59, 59);
+        List<SalesforceMovement> movements = new ArrayList<>();
+        if (salesagentId != null) {
+            Salesforce salesforce = salesforceRepository.getOne(salesagentId);
+            if (salesforce == null)
+                throw new ApiValidationException("salesforce Id", "salesforce-id-is-not-vaild");
+            movements = movementRepository.findBySalesforceIdAndDateTimeBetween(salesagentId, from.toString(), to.toString());
+        } else
+            movements = movementRepository.findAllByDateTimeBetween(from.toString(), to.toString());
+        MovementReport report = new MovementReport();
+        report.setTotal(movements.size());
+        List<Movement> movementList = new ArrayList<>();
+        for (int i = 0; i < movements.size(); i++) {
+            Movement movement = new Movement();
+            movement.setAddress(movements.get(i).getAddress());
+            movement.setLatitude(movements.get(i).getLatitude());
+            movement.setLongitude(movements.get(i).getLongitude());
+            movement.setMovementTime(movements.get(i).getDateTime());
+            movement.setSalesAgentArabicName(movements.get(i).getSalesforce().getArName());
+            movement.setSalesAgentEnglishName(movements.get(i).getSalesforce().getEnName());
+            movement.setStatus(movements.get(i).getStatus().toString());
+            movementList.add(movement);
+        }
+        report.setMovements(movementList);
+        return report;
+    }
+
 
 }

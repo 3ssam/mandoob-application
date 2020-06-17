@@ -2,6 +2,7 @@ package com.mandob.controller;
 
 import com.mandob.projection.Customer.CustomerListProjection;
 import com.mandob.projection.SalesForce.SalesforceListProjection;
+import com.mandob.response.MovementReport;
 import com.mandob.response.OrderReport;
 import com.mandob.response.ScheduleVisitReport;
 import com.mandob.service.ReportsServices;
@@ -53,6 +54,14 @@ public class ReportsController {
                                        @RequestParam(required = false) String from,
                                        @RequestParam(required = false) String to) {
         return reportsServices.getOrdersReport(orderId, salesagentId, customerId, from, to);
+    }
+
+
+    @GetMapping("movements")
+    public MovementReport getMovementsReport(@RequestParam(required = false) String salesagentId,
+                                             @RequestParam(required = false) String from,
+                                             @RequestParam(required = false) String to) {
+        return reportsServices.getMovementsReport(salesagentId, from, to);
     }
 
 
