@@ -5,6 +5,7 @@ import com.mandob.domain.Customer;
 import com.mandob.domain.Salesforce;
 import com.mandob.domain.SalesforceMovement;
 import com.mandob.domain.ScheduleVisit;
+import com.mandob.domain.enums.MovementStatus;
 import com.mandob.domain.enums.ScheduleVisitStatus;
 import com.mandob.projection.SalesForce.SalesforceMovementListProjection;
 import com.mandob.repository.CustomerRepository;
@@ -97,6 +98,13 @@ public class MovementService {
 
     public SalesforceMovementListProjection getLatestMovements() {
         return movementRepository.getById(movementRepository.findLatestDateTime().getId());
+    }
+
+    public int countActiveUsers() {
+        LocalDateTime start = LocalDateTime.now().withHour(0).withMinute(0);
+        LocalDateTime end = start.withHour(23).withMinute(59);
+        List<SalesforceMovement> movements = movementRepository.findAllByStatusAndDateTimeBetween(MovementStatus.START, start.toString(), end.toString());
+        return movements.size();
     }
 
 }

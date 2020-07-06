@@ -4,6 +4,7 @@ import com.mandob.base.repository.BaseRepository;
 import com.mandob.domain.Customer;
 import com.mandob.domain.Salesforce;
 import com.mandob.domain.SalesforceMovement;
+import com.mandob.domain.enums.MovementStatus;
 import com.mandob.projection.SalesForce.SalesforceMovementListProjection;
 import org.springframework.data.jpa.repository.Query;
 
@@ -20,6 +21,8 @@ public interface SalesforceMovementRepository extends BaseRepository<SalesforceM
     List<SalesforceMovement> findAllByDateTimeBetween(String start, String end);
 
     List<SalesforceMovement> findBySalesforceIdAndDateTimeBetween(String salesforceId, String start, String end);
+
+    List<SalesforceMovement> findAllByStatusAndDateTimeBetween(MovementStatus status, String start, String end);
 
 
 //    @Query(value = "select * from salesforce_movement as firsttable inner join\n" +

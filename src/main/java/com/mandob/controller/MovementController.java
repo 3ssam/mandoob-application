@@ -33,5 +33,9 @@ public class MovementController {
         return movementService.getLatestMovements();
     }
 
+    @GetMapping("/active")
+    public int countActiveUser() {
+        return movementService.countActiveUsers();
+    }
 
 }
