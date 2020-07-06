@@ -52,4 +52,9 @@ public class ScheduleVisitController {
         return ApiResponse.updated(scheduleVisitService.update(scheduleVisitId, req));
     }
 
+    @GetMapping("achieved")
+    public int countAchievedVisit() {
+        return scheduleVisitService.countAchievedVisit();
+    }
+
 }

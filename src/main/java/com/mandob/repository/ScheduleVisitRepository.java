@@ -4,6 +4,7 @@ import com.mandob.base.repository.AuditRepository;
 import com.mandob.domain.Customer;
 import com.mandob.domain.Salesforce;
 import com.mandob.domain.ScheduleVisit;
+import com.mandob.domain.enums.ScheduleVisitStatus;
 import com.mandob.projection.schedulevisit.ScheduleVisitListProjection;
 import com.mandob.projection.schedulevisit.ScheduleVisitProjection;
 import org.springframework.data.domain.Page;
@@ -36,6 +37,7 @@ public interface ScheduleVisitRepository extends AuditRepository<ScheduleVisit> 
 
     ScheduleVisit findBySalesforceAndCustomerAndScheduleDateBetween(Salesforce salesforce, Customer customer, String from, String to);
 
+    List<ScheduleVisit> findByVisitStatusAndScheduleDateBetween(ScheduleVisitStatus status, String from, String to);
 
     List<ScheduleVisitListProjection> findAllByCustomerAndSalesforce(Customer customer, Salesforce salesforce);
 }

@@ -196,5 +196,12 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         return scheduleVisitRepository;
     }
 
+    public int countAchievedVisit() {
+        LocalDateTime start = LocalDateTime.now().withHour(0).withMinute(0);
+        LocalDateTime end = start.withHour(23).withMinute(59);
+        List<ScheduleVisit> visits = scheduleVisitRepository.findByVisitStatusAndScheduleDateBetween(ScheduleVisitStatus.ACHIEVED, start.toString(), end.toString());
+        return visits.size();
+    }
+
 
 }
