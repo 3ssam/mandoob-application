@@ -57,6 +57,7 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         scheduleVisit.setCreatedAt(Instant.now());
         scheduleVisit.setCustomer(customer);
         scheduleVisit.setSalesforce(salesforce);
+        scheduleVisit.setMovementStatus("NEW");
         scheduleVisit.setVisitStatus(ScheduleVisitStatus.PLANNED);
         scheduleVisit = createNewScheduleVisit(req, scheduleVisit);
         scheduleVisitRepository.save(scheduleVisit);
@@ -123,6 +124,7 @@ public class ScheduleVisitService extends AuditService<ScheduleVisit> {
         scheduleVisit.setUpdatedAt(Instant.now());
         scheduleVisit.setLongitude(scheduleVisit.getCustomer().getLongitude());
         scheduleVisit.setLatitude(scheduleVisit.getCustomer().getLatitude());
+        scheduleVisit.setAddress(scheduleVisit.getCustomer().getAddress());
         return scheduleVisit;
     }
 

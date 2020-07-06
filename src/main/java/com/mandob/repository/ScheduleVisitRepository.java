@@ -34,5 +34,8 @@ public interface ScheduleVisitRepository extends AuditRepository<ScheduleVisit> 
 
     List<ScheduleVisitListProjection> findAllBySalesforceAndCustomerAndScheduleDateBetween(Salesforce salesforce, Customer customer, String from, String to);
 
+    ScheduleVisit findBySalesforceAndCustomerAndScheduleDateBetween(Salesforce salesforce, Customer customer, String from, String to);
+
+
     List<ScheduleVisitListProjection> findAllByCustomerAndSalesforce(Customer customer, Salesforce salesforce);
 }

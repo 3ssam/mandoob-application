@@ -12,6 +12,9 @@ public interface ScheduleVisitProjection extends AuditProjection {
 
     String getScheduleDate();
 
+    String getMovementStatus();
+
+
     Boolean getPartialPayAllowed();
 
     ScheduleVisitType getVisitType();

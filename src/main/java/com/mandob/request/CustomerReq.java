@@ -14,6 +14,9 @@ public class CustomerReq {
     @NotNull(message = "must-not-be-null")
     private String latitude;
 
+    @NotNull(message = "must-not-be-null")
+    private String address;
+
     @NotBlank(message = "must-not-be-null")
     private String arName;
 

@@ -5,7 +5,7 @@ import com.mandob.base.Projection.LookupProjection;
 import com.mandob.base.Projection.MasterProjection;
 
 @JsonPropertyOrder({"id", "name", "arName", "enName", "email", "route", "phoneNumber2", "phoneNumber2",
-        "government", "city", "activated", "suspended", "createdAt", "updatedAt", "longitude", "latitude"})
+        "government", "city", "activated", "suspended", "createdAt", "updatedAt", "longitude", "latitude", "address"})
 public interface CustomerProjection extends MasterProjection {
     String getEmail();
 
@@ -28,4 +28,7 @@ public interface CustomerProjection extends MasterProjection {
     String getLongitude();
 
     String getLatitude();
+
+    String getAddress();
+
 }

@@ -41,6 +41,10 @@ public class ScheduleVisit extends EntityAudit {
     @Column(nullable = false)
     private Boolean partialPayAllowed;
 
+    @Column(nullable = false)
+    private String movementStatus = "NEW";
+
+
 //    @OneToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "invoice_id", referencedColumnName = "id")
 //    private Invoice invoice;

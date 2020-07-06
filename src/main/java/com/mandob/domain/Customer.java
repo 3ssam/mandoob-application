@@ -21,6 +21,9 @@ public class Customer extends User {
     @Column(nullable = false)
     private String latitude;
 
+    @Column(nullable = false)
+    private String address;
+
     @Column(nullable = false, length = 13)
     private String phoneNumber1;
 
