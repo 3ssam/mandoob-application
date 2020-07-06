@@ -40,4 +40,10 @@ public class OrderController {
     }
 
 
+    @GetMapping("/day")
+    public int countOrdersOfDay() {
+        return orderService.countOrdersOfDay();
+    }
+
+
 }

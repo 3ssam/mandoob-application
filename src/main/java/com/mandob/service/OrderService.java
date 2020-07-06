@@ -25,6 +25,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,6 +119,14 @@ public class OrderService extends AuditService<Order> {
             invoice.setAmountCashcollection(Double.parseDouble(req.getAmountPaid()));
         invoiceRepository.save(invoice);
     }
+
+    public int countOrdersOfDay() {
+        Instant start = LocalDateTime.now().withHour(0).withMinute(0).toInstant(ZoneOffset.UTC);
+        Instant end = LocalDateTime.now().withHour(23).withMinute(59).toInstant(ZoneOffset.UTC);
+        List<Order> orders = orderRepository.findByCreatedAtBetween(start, end);
+        return orders.size();
+    }
+
 
     @Override
     protected BaseRepository<Order> getRepository() {

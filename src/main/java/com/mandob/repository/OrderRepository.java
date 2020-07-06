@@ -17,4 +17,8 @@ public interface OrderRepository extends PagingAndSortingRepository<Order, Strin
     OrderProjection findAllById(String id);
 
     List<Order> findByCustomerAndCreatedAtBetween(Customer customer, Instant start, Instant end);
+
+    List<Order> findByCreatedAtBetween(Instant start, Instant end);
+
+
 }
