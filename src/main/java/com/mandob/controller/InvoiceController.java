@@ -21,8 +21,9 @@ public class InvoiceController {
     public Page<InvoiceListProjection> getAllInvoices(@RequestParam(required = false) String salesagentId
             , @RequestParam(required = false) String status
             , @RequestParam(required = false) String customerId
+            , @RequestParam(required = false) String date
             , @RequestParam(defaultValue = "0") PageRequestVM pr) {
-        return invoiceService.getInvoices(salesagentId, status, customerId, pr);
+        return invoiceService.getInvoices(salesagentId, status, customerId, date, pr);
     }
 
     @GetMapping("customer/{customerId}")
@@ -36,8 +37,9 @@ public class InvoiceController {
     public Page<InvoiceListProjection> findAllInvoicesBySalesagent(@PathVariable String salesagentId
             , @RequestParam(required = false) String status
             , @RequestParam(required = false) String customerId
+            , @RequestParam(required = false) String date
             , @RequestParam(defaultValue = "0") PageRequestVM pr) {
-        return invoiceService.getInvoiceBySalesagent(salesagentId, status, customerId, pr);
+        return invoiceService.getInvoiceBySalesagent(salesagentId, status, customerId, date, pr);
     }
 
     @GetMapping("{invoiceId}")

@@ -20,6 +20,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
@@ -35,10 +36,10 @@ public class InvoiceService extends AuditService<Invoice> {
     private final SalesforceRepository salesforceRepository;
 
 
-    public Page<InvoiceListProjection> getInvoices(String salesagentId, String status, String customerId, PageRequestVM pr) {
+    public Page<InvoiceListProjection> getInvoices(String salesagentId, String status, String customerId, String date, PageRequestVM pr) {
         Page<InvoiceListProjection> list = null;
         if (salesagentId != null)
-            list = getInvoiceBySalesagent(salesagentId, status, customerId, pr);
+            list = getInvoiceBySalesagent(salesagentId, status, customerId, date, pr);
         else if (customerId != null)
             list = getInvoiceByCustomer(customerId, status, pr);
         else
@@ -61,7 +62,7 @@ public class InvoiceService extends AuditService<Invoice> {
         return list;
     }
 
-    public Page<InvoiceListProjection> getInvoiceBySalesagent(String salesagentId, String status, String customerId, PageRequestVM pr) {
+    public Page<InvoiceListProjection> getInvoiceBySalesagent(String salesagentId, String status, String customerId, String date, PageRequestVM pr) {
         Salesforce salesforce = salesforceRepository.getOne(salesagentId);
         Customer customer = null;
         if (salesforce == null)
@@ -71,20 +72,40 @@ public class InvoiceService extends AuditService<Invoice> {
             if (customer == null)
                 throw new ApiValidationException("Customer Id", "customer-id-is-not-vaild");
         }
+        Instant start = null;
+        Instant end = null;
+        if (date != null) {
+            LocalDate localDate = LocalDate.parse(date);
+            start = localDate.atTime(0, 0, 0).toInstant(ZoneOffset.UTC);
+            end = localDate.atTime(23, 59, 59).toInstant(ZoneOffset.UTC);
+        }
+
         Page<InvoiceListProjection> list = null;
         if (status == null) {
-            if (customer != null)
+            if (customer != null && date != null)
+                list = invoiceRepository.findBySalesforceAndCustomerAndCreatedAtBetween(salesforce, customer, start, end, pr.build());
+            else if (customer != null)
                 list = invoiceRepository.findAllBySalesforceAndCustomer(salesforce, customer, pr.build());
+            else if (date != null)
+                list = invoiceRepository.findBySalesforceAndCreatedAtBetween(salesforce, start, end, pr.build());
             else
                 list = invoiceRepository.findAllBySalesforce(salesforce, pr.build());
         } else if (status.equalsIgnoreCase("OPEN")) {
-            if (customer != null)
+            if (customer != null && date != null)
+                list = invoiceRepository.findBySalesforceAndCustomerAndStatusAndCreatedAtBetween(salesforce, customer, InvoiceStatus.OPEN, start, end, pr.build());
+            else if (customer != null)
                 list = invoiceRepository.findAllBySalesforceAndCustomerAndStatus(salesforce, customer, InvoiceStatus.OPEN, pr.build());
+            else if (date != null)
+                list = invoiceRepository.findBySalesforceAndStatusAndCreatedAtBetween(salesforce, InvoiceStatus.OPEN, start, end, pr.build());
             else
                 list = invoiceRepository.findAllBySalesforceAndStatus(salesforce, InvoiceStatus.OPEN, pr.build());
         } else if (status.equalsIgnoreCase("CLOSED")) {
-            if (customer != null)
+            if (customer != null && date != null)
+                list = invoiceRepository.findBySalesforceAndCustomerAndStatusAndCreatedAtBetween(salesforce, customer, InvoiceStatus.CLOSED, start, end, pr.build());
+            else if (customer != null)
                 list = invoiceRepository.findAllBySalesforceAndCustomerAndStatus(salesforce, customer, InvoiceStatus.CLOSED, pr.build());
+            else if (date != null)
+                list = invoiceRepository.findBySalesforceAndStatusAndCreatedAtBetween(salesforce, InvoiceStatus.CLOSED, start, end, pr.build());
             else
                 list = invoiceRepository.findAllBySalesforceAndStatus(salesforce, InvoiceStatus.CLOSED, pr.build());
         }

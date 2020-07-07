@@ -35,6 +35,16 @@ public interface InvoiceRepository extends PagingAndSortingRepository<Invoice, S
 
     Page<InvoiceListProjection> findAllByStatus(InvoiceStatus status, Pageable pageable);
 
+
+    Page<InvoiceListProjection> findBySalesforceAndCreatedAtBetween(Salesforce salesforce, Instant start, Instant end, Pageable pageable);
+
+    Page<InvoiceListProjection> findBySalesforceAndCustomerAndCreatedAtBetween(Salesforce salesforce, Customer customer, Instant start, Instant end, Pageable pageable);
+
+    Page<InvoiceListProjection> findBySalesforceAndStatusAndCreatedAtBetween(Salesforce salesforce, InvoiceStatus status, Instant start, Instant end, Pageable pageable);
+
+    Page<InvoiceListProjection> findBySalesforceAndCustomerAndStatusAndCreatedAtBetween(Salesforce salesforce, Customer customer, InvoiceStatus status, Instant start, Instant end, Pageable pageable);
+
+
     List<Invoice> findAllBySalesforceAndCustomerAndCreatedAtBetween(Salesforce salesforce, Customer customer, Instant start, Instant end);
 
     List<Invoice> findAllBySalesforceAndCustomerAndPayingTypeAndCreatedAtBetween(Salesforce salesforce, Customer customer, PayingType payingType, Instant start, Instant end);
