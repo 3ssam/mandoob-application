@@ -85,6 +85,7 @@ public class OrderService extends AuditService<Order> {
         order.setCompany(customer.getCreatedBy().getCompany());
 
         order.setCustomer(customer);
+        order.setSalesforce(customer.getSalesforce());
         order.setProducts(products);
         order.setOrderAmount(amounts);
         order.calculateTotalPrice();

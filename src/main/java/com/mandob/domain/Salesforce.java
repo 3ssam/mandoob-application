@@ -59,6 +59,8 @@ public class Salesforce extends User {
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforces")
     private List<Notifications> notifications = new ArrayList<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "salesforce")
+    private List<Order> orders;
 
     @Override
     public String toString() {

@@ -22,6 +22,12 @@ public class Order extends EntityAudit {
     private Customer customer;
 
     @NotNull
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "salesforce_id", referencedColumnName = "id")
+    private Salesforce salesforce;
+
+
+    @NotNull
     private double totalOrder;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
