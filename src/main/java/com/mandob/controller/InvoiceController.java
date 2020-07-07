@@ -56,5 +56,10 @@ public class InvoiceController {
         return invoiceService.getInvoiceReport(invoiceId, salesagentId, status, customerId, from, to, payingType);
     }
 
+    @PostMapping("{invoiceId}")
+    public InvoiceListProjection CashCollection(@PathVariable String invoiceId, @RequestParam String amount) {
+        return invoiceService.cashCollection(invoiceId, amount);
+    }
+
 
 }

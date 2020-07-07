@@ -35,8 +35,13 @@ public class OrderController {
     }
 
     @PostMapping
-    public ApiResponse<OrderProjection> createCustomer(@Valid @RequestBody OrderReq req) {
+    public ApiResponse<OrderProjection> createOrder(@Valid @RequestBody OrderReq req) {
         return ApiResponse.created(orderService.CreateOrder(req));
+    }
+
+    @PostMapping("/isIncentive")
+    public ApiResponse<Boolean> isNotIncentive(@RequestBody OrderReq req) {
+        return ApiResponse.ok(orderService.isNotIncentive(req));
     }
 
 

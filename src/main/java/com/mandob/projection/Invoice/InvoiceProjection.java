@@ -5,16 +5,23 @@ import com.mandob.base.Projection.AuditProjection;
 import com.mandob.domain.enums.InvoiceStatus;
 import com.mandob.domain.enums.PayingType;
 
-@JsonPropertyOrder({"id", "createdAt", "updatedAt", "totalAmount", "amountPaid", "amountRemain", "payingType", "status"})
+@JsonPropertyOrder({"id", "createdAt", "updatedAt", "totalAmount", "amountPaid", "amountRemain", "payingType", "status", "amountCashcollection", "InstallmentNumber", "Installment"})
 public interface InvoiceProjection extends AuditProjection {
 
-     double getTotalAmount();
+    double getTotalAmount();
 
-     double getAmountPaid();
+    double getAmountPaid();
 
-     double getAmountRemain();
+    double getAmountRemain();
 
-     PayingType getPayingType();
+    PayingType getPayingType();
 
-     InvoiceStatus getStatus();
+    InvoiceStatus getStatus();
+
+    double getAmountCashcollection();
+
+//    int getInstallmentNumber();
+//
+//    boolean getInstallment();
+
 }

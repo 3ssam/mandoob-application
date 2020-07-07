@@ -25,9 +25,12 @@ public class OrderReq {
     private String installmentNumber;
 
     @NotNull(message = "must-not-be-null")
-    private PayingType payingType;
+    private String payingType;
 
     @NotBlank(message = "must-not-be-blank")
     private String currentUser;
 
+    public PayingType getPayingType() {
+        return PayingType.valueOf(payingType);
+    }
 }

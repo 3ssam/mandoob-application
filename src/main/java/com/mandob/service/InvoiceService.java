@@ -222,6 +222,50 @@ public class InvoiceService extends AuditService<Invoice> {
         return items;
     }
 
+    public InvoiceListProjection cashCollection(String invoiceId, String money) {
+        double amount = Double.parseDouble(money);
+        Invoice invoice = invoiceRepository.findById(invoiceId).get();
+        if (invoice == null)
+            throw new ApiValidationException("Invoice Id", "Invoice-id-is-not-vaild");
+        if (invoice.getPayingType().equals(PayingType.CASH)) {
+            if (invoice.getAmountCashcollection() <= amount) {
+                invoice.setAmountCashcollection(0);
+                invoice.setAmountRemain(0);
+                invoice.setStatus(InvoiceStatus.CLOSED);
+                invoice.setAmountPaid(invoice.getAmountPaid() + amount);
+            } else {
+                invoice.setPayingType(PayingType.INSTALLMENT);
+                invoice.setInstallment(true);
+                invoice.setInstallmentNumber(1);
+                invoice.setAmountCashcollection(invoice.getAmountCashcollection() - amount);
+                invoice.setAmountRemain(invoice.getAmountRemain() - amount);
+                invoice.setAmountPaid(invoice.getAmountPaid() + amount);
+            }
+        } else if (invoice.getPayingType().equals(PayingType.INSTALLMENT)) {
+            invoice.setAmountPaid(invoice.getAmountPaid() + amount);
+            invoice.setAmountRemain(invoice.getAmountRemain() - amount);
+            if (invoice.getAmountCashcollection() <= amount) {
+                invoice.setInstallmentNumber(invoice.getInstallmentNumber() - 1);
+                invoice.setAmountCashcollection(invoice.getAmountRemain() / invoice.getInstallmentNumber());
+            } else {
+                invoice.setInstallmentNumber(invoice.getInstallmentNumber() + 1);
+                invoice.setAmountCashcollection(invoice.getAmountRemain() / invoice.getInstallmentNumber());
+            }
+        }
+        if (invoice.getAmountRemain() <= 0 && invoice.getAmountPaid() >= invoice.getTotalAmount()) {
+            invoice.setAmountCashcollection(0);
+            invoice.setAmountRemain(0);
+            invoice.setStatus(InvoiceStatus.CLOSED);
+            invoice.setInstallmentNumber(0);
+            invoice.setAmountPaid(invoice.getTotalAmount());
+        }
+        invoice.setUpdatedAt(Instant.now());
+        invoiceRepository.save(invoice);
+        InvoiceListProjection projection = invoiceRepository.findAllById(invoice.getId());
+        return projection;
+    }
+
+
     @Override
     protected BaseRepository<Invoice> getRepository() {
         return null;

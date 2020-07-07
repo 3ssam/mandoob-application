@@ -45,4 +45,10 @@ public class CustomerController {
         return customerService.lookup(customerId);
     }
 
+    @GetMapping("balance")
+    public ApiResponse<Double> getBalance(String customerId) {
+        return ApiResponse.ok(customerService.getBalance(customerId));
+    }
+
+
 }

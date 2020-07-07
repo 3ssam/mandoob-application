@@ -13,6 +13,7 @@ import com.mandob.domain.enums.OrderStatus;
 import com.mandob.domain.enums.PayingType;
 import com.mandob.projection.Order.OrderListProjection;
 import com.mandob.projection.Order.OrderProjection;
+import com.mandob.repository.CustomerRepository;
 import com.mandob.repository.InvoiceRepository;
 import com.mandob.repository.OrderRepository;
 import com.mandob.repository.ProductRepository;
@@ -38,11 +39,11 @@ public class OrderService extends AuditService<Order> {
     @Autowired
     private final InvoiceRepository invoiceRepository;
     private final ProductRepository productRepository;
-    private final CustomerService customerService;
+    private final CustomerRepository customerRepository;
     private final UserService userService;
 
     public Page<OrderListProjection> getOrdersOfCustomer(String customerId, PageRequestVM pr) {
-        Customer customer = customerService.findById(customerId);
+        Customer customer = customerRepository.getOne(customerId);
         if (customer == null)
             throw new ApiValidationException("Customer Id", "customer-id-is-not-vaild");
         PageRequest request = pr.buildWithPage(pr.getPage());
@@ -62,7 +63,7 @@ public class OrderService extends AuditService<Order> {
         Order order = new Order();
         List<Product> products = new ArrayList<>();
         List<Integer> amounts = new ArrayList<>();
-        Customer customer = customerService.findById(req.getCurrentUser());
+        Customer customer = customerRepository.getOne(req.getCurrentUser());
         if (customer == null)
             throw new ApiValidationException("Customer Id", "customer-id-is-not-vaild");
 
@@ -96,12 +97,24 @@ public class OrderService extends AuditService<Order> {
 
     @Transactional
     protected void createInvoice(Order order, OrderReq req) {
+        Customer customer = order.getCustomer();
         Invoice invoice = new Invoice();
         invoice.setAmountPaid(0);
         invoice.setTotalAmount(order.getTotalOrder());
         invoice.setAmountRemain(order.getTotalOrder());
         invoice.setStatus(InvoiceStatus.OPEN);
         invoice.setPayingType(req.getPayingType());
+        if (req.getPayingType().equals(PayingType.INCENTIVE)) {
+            if (customer.getBalance() >= invoice.getTotalAmount()) {
+                customer.setBalance(customer.getBalance() - invoice.getTotalAmount());
+                invoice.setAmountRemain(0);
+                invoice.setAmountPaid(invoice.getTotalAmount());
+                invoice.setStatus(InvoiceStatus.CLOSED);
+                invoice.setAmountCashcollection(0);
+                customerRepository.save(customer);
+            } else
+                throw new ApiValidationException("Payment Type", "In suffecient balance");
+        }
         invoice.setInstallment(req.isInstallment());
         invoice.setUpdatedAt(order.getUpdatedAt());
         invoice.setCreatedAt(order.getCreatedAt());
@@ -111,11 +124,12 @@ public class OrderService extends AuditService<Order> {
         if (invoice.isInstallment())
             invoice.setInstallmentNumber(Integer.parseInt(req.getInstallmentNumber()));
         invoice.setOrder(order);
-        invoice.setCustomer(order.getCustomer());
+        invoice.setCustomer(customer);
         invoice.setSalesforce(order.getCustomer().getSalesforce());
-        if (invoice.getPayingType().equals(PayingType.CASH))
+        if (invoice.getPayingType().equals(PayingType.CASH)) {
             invoice.setAmountCashcollection(invoice.getTotalAmount());
-        else
+        }
+        if (invoice.getPayingType().equals(PayingType.INSTALLMENT))
             invoice.setAmountCashcollection(Double.parseDouble(req.getAmountPaid()));
         invoiceRepository.save(invoice);
     }
@@ -127,9 +141,36 @@ public class OrderService extends AuditService<Order> {
         return orders.size();
     }
 
+    public Boolean isNotIncentive(OrderReq req) {
+        Order order = new Order();
+        List<Product> products = new ArrayList<>();
+        List<Integer> amounts = new ArrayList<>();
+        Customer customer = customerRepository.findById(req.getCurrentUser()).get();
+        if (customer == null)
+            throw new ApiValidationException("Customer Id", "customer-id-is-not-vaild");
+
+        for (int i = 0; i < req.getAmounts().size(); i++) {
+            Product product = productRepository.getOne(req.getProducts().get(i));
+            if (product != null && product.getRemainingAmount() >= req.getAmounts().get(i)) {
+                product.setRemainingAmount(product.getRemainingAmount() - req.getAmounts().get(i));
+                product.setAmount(product.getRemainingAmount());
+                products.add(product);
+                amounts.add(req.getAmounts().get(i));
+            }
+        }
+        order.setProducts(products);
+        order.setOrderAmount(amounts);
+        order.calculateTotalPrice();
+        if (customer.getBalance() >= order.getTotalOrder())
+            return false;
+        return true;
+    }
+
 
     @Override
     protected BaseRepository<Order> getRepository() {
         return null;
     }
+
+
 }

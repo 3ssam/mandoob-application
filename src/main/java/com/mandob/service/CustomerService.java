@@ -1,5 +1,6 @@
 package com.mandob.service;
 
+import com.mandob.base.exception.ApiValidationException;
 import com.mandob.base.repository.BaseRepository;
 import com.mandob.base.service.MasterService;
 import com.mandob.domain.Customer;
@@ -29,7 +30,7 @@ public class CustomerService extends MasterService<Customer> {
         Customer customer = new Customer();
         customer.setCreatedBy(userService.findById(req.getCurrentUser()));
         customer.setCreatedAt(Instant.now());
-        customer = createNewCustomer(req,customer);
+        customer = createNewCustomer(req, customer);
         customerRepository.save(customer);
         userService.createNewUserData(customer);
         return findById(customer.getId(), CustomerProjection.class);
@@ -38,13 +39,21 @@ public class CustomerService extends MasterService<Customer> {
     @Transactional
     public CustomerProjection update(String id, CustomerReq req) {
         Customer customer = findById(id);
-        customer = createNewCustomer(req,customer);
+        customer = createNewCustomer(req, customer);
         userService.validateUserNewEmail(req.getEmail(), id);
         customerRepository.save(customer);
         return findById(customer.getId(), CustomerProjection.class);
     }
 
-    public Customer createNewCustomer(CustomerReq req,Customer customer){
+    public double getBalance(String id) {
+        Customer customer = customerRepository.getOne(id);
+        if (customer == null)
+            throw new ApiValidationException("Customer Id", "customer-id-is-not-vaild");
+        return customer.getBalance();
+    }
+
+
+    public Customer createNewCustomer(CustomerReq req, Customer customer) {
         customer.setLicenseNo(req.getLicenseNo());
         customer.setPhoneNumber1(req.getPhoneNumber1());
         customer.setPhoneNumber2(req.getPhoneNumber2());
