@@ -281,11 +281,21 @@ public class InvoiceService extends AuditService<Invoice> {
             invoice.setAmountPaid(invoice.getTotalAmount());
         }
         invoice.setUpdatedAt(Instant.now());
+        invoice.setLastAmountPaid(amount);
         invoiceRepository.save(invoice);
         InvoiceListProjection projection = invoiceRepository.findAllById(invoice.getId());
         return projection;
     }
 
+    public double getPaidMoney() {
+        Instant start = LocalDate.now().atTime(0, 0, 0).toInstant(ZoneOffset.UTC);
+        Instant end = LocalDate.now().atTime(23, 59, 59).toInstant(ZoneOffset.UTC);
+        List<Invoice> invoices = invoiceRepository.findAllByUpdatedAtBetween(start, end);
+        double paid = 0;
+        for (int i = 0; i < invoices.size(); i++)
+            paid += invoices.get(i).getLastAmountPaid();
+        return paid;
+    }
 
     @Override
     protected BaseRepository<Invoice> getRepository() {

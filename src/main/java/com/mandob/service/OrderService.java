@@ -87,7 +87,7 @@ public class OrderService extends AuditService<Order> {
         order.calculateTotalPrice();
         order.setStatus(OrderStatus.NEW);
         order.setPayment(req.getPayingType().toString());
-        order.setOrderDate(LocalDateTime.now().toString());
+        order.setOrderDate(LocalDate.now().toString());
         orderRepository.save(order);
         createInvoice(order, req);
         return orderRepository.findAllById(order.getId());
@@ -110,6 +110,7 @@ public class OrderService extends AuditService<Order> {
                 invoice.setStatus(InvoiceStatus.CLOSED);
                 invoice.setAmountCashcollection(0);
                 customerRepository.save(customer);
+                invoice.setLastAmountPaid(invoice.getTotalAmount());
             } else
                 throw new ApiValidationException("Payment Type", "In suffecient balance");
         }
@@ -129,6 +130,7 @@ public class OrderService extends AuditService<Order> {
         }
         if (invoice.getPayingType().equals(PayingType.INSTALLMENT))
             invoice.setAmountCashcollection(Double.parseDouble(req.getAmountPaid()));
+        invoice.setLastAmountPaid(0);
         invoiceRepository.save(invoice);
     }
 

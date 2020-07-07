@@ -24,6 +24,8 @@ public class Invoice extends EntityAudit {
     @NotNull
     private double amountRemain;
 
+    private double lastAmountPaid;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     private Order order;

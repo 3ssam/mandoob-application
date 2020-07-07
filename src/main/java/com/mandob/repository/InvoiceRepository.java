@@ -77,4 +77,7 @@ public interface InvoiceRepository extends PagingAndSortingRepository<Invoice, S
 
     List<Invoice> findAllByCreatedAtBetween(Instant start, Instant end);
 
+    List<Invoice> findAllByUpdatedAtBetween(Instant start, Instant end);
+
+
 }
