@@ -19,9 +19,18 @@ public class OrderController {
     private final OrderService orderService;
 
     @GetMapping("customer/{customerId}")
-    public Page<OrderListProjection> findAllOrders(@PathVariable String customerId, @RequestParam() PageRequestVM pr) {
+    public Page<OrderListProjection> findAllOrdersforCustomer(@PathVariable String customerId, @RequestParam() PageRequestVM pr) {
         return orderService.getOrdersOfCustomer(customerId, pr);
     }
+
+    @GetMapping("salesforce/{salesforceId}")
+    public Page<OrderListProjection> findAllOrdersforSalesforce(@PathVariable String salesforceId,
+                                                                @RequestParam(required = false) String customerId,
+                                                                @RequestParam(required = false) String date,
+                                                                @RequestParam() PageRequestVM pr) {
+        return orderService.getOrdersOfSalesforce(salesforceId, customerId, date, pr);
+    }
+
 
 //    @GetMapping("customer/{customerId}")
 //    public ApiPageResponse<OrderListProjection> findAllCustomers(PageRequestVM pr) {

@@ -4,19 +4,13 @@ import com.mandob.base.Utils.PageRequestVM;
 import com.mandob.base.exception.ApiValidationException;
 import com.mandob.base.repository.BaseRepository;
 import com.mandob.base.service.AuditService;
-import com.mandob.domain.Customer;
-import com.mandob.domain.Invoice;
-import com.mandob.domain.Order;
-import com.mandob.domain.Product;
+import com.mandob.domain.*;
 import com.mandob.domain.enums.InvoiceStatus;
 import com.mandob.domain.enums.OrderStatus;
 import com.mandob.domain.enums.PayingType;
 import com.mandob.projection.Order.OrderListProjection;
 import com.mandob.projection.Order.OrderProjection;
-import com.mandob.repository.CustomerRepository;
-import com.mandob.repository.InvoiceRepository;
-import com.mandob.repository.OrderRepository;
-import com.mandob.repository.ProductRepository;
+import com.mandob.repository.*;
 import com.mandob.request.OrderReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -40,6 +35,7 @@ public class OrderService extends AuditService<Order> {
     private final InvoiceRepository invoiceRepository;
     private final ProductRepository productRepository;
     private final CustomerRepository customerRepository;
+    private final SalesforceRepository salesforceRepository;
     private final UserService userService;
 
     public Page<OrderListProjection> getOrdersOfCustomer(String customerId, PageRequestVM pr) {
@@ -165,6 +161,36 @@ public class OrderService extends AuditService<Order> {
         if (customer.getBalance() >= order.getTotalOrder())
             return false;
         return true;
+    }
+
+
+    public Page<OrderListProjection> getOrdersOfSalesforce(String salesforceId,
+                                                           String customerId, String date, PageRequestVM pr) {
+        Salesforce salesforce = salesforceRepository.getOne(salesforceId);
+        if (salesforce == null)
+            throw new ApiValidationException("Salesforce Id", "Salesforce-id-is-not-vaild");
+        Customer customer = null;
+        if (customerId != null) {
+            customer = customerRepository.getOne(customerId);
+            if (customer == null)
+                throw new ApiValidationException("Customer Id", "customer-id-is-not-vaild");
+        }
+        Instant start = null;
+        Instant end = null;
+        if (date != null) {
+            LocalDate localDate = LocalDate.parse(date);
+            start = localDate.atTime(0, 0, 0).toInstant(ZoneOffset.UTC);
+            end = localDate.atTime(23, 59, 59).toInstant(ZoneOffset.UTC);
+        }
+        PageRequest request = pr.buildWithPage(pr.getPage());
+        if (customerId != null && date != null)
+            return orderRepository.findAllBySalesforceAndCustomerAndCreatedAtBetween(salesforce, customer, start, end, request);
+        else if (customerId != null)
+            return orderRepository.findAllBySalesforceAndCustomer(salesforce, customer, request);
+        else if (date != null)
+            return orderRepository.findAllBySalesforceAndCreatedAtBetween(salesforce, start, end, request);
+        else
+            return orderRepository.findAllBySalesforce(salesforce, request);
     }
 
 
