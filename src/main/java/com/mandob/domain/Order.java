@@ -43,6 +43,9 @@ public class Order extends EntityAudit {
     @OneToOne(mappedBy = "order")
     private Invoice invoice;
 
+    private String payment;
+
+    private String orderDate;
 
     @ElementCollection
     @CollectionTable(

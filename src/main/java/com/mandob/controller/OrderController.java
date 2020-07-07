@@ -39,7 +39,7 @@ public class OrderController {
 
 
     @GetMapping("{orderId}")
-    public OrderProjection findAllOrders(@PathVariable String orderId) {
+    public OrderProjection findOrder(@PathVariable String orderId) {
         return orderService.getOrder(orderId);
     }
 
@@ -48,7 +48,7 @@ public class OrderController {
         return ApiResponse.created(orderService.CreateOrder(req));
     }
 
-    @PostMapping("/isIncentive")
+    @PostMapping("/isNotIncentive")
     public ApiResponse<Boolean> isNotIncentive(@RequestBody OrderReq req) {
         return ApiResponse.ok(orderService.isNotIncentive(req));
     }

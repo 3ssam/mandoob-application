@@ -7,7 +7,7 @@ import com.mandob.domain.enums.OrderStatus;
 
 import java.util.List;
 
-@JsonPropertyOrder({"id", "createdAt", "updatedAt", "totalOrder", "orderAmount", "tempProducts", "status"})
+@JsonPropertyOrder({"id", "createdAt", "updatedAt", "totalOrder", "orderAmount", "tempProducts", "status", "payment", "orderDate"})
 public interface OrderProjection extends AuditProjection {
     double getTotalOrder();
 
@@ -16,4 +16,9 @@ public interface OrderProjection extends AuditProjection {
     List<Product> getTempProducts();
 
     OrderStatus getStatus();
+
+    String getPayment();
+
+    String getOrderDate();
+
 }

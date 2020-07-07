@@ -86,7 +86,8 @@ public class OrderService extends AuditService<Order> {
         order.setOrderAmount(amounts);
         order.calculateTotalPrice();
         order.setStatus(OrderStatus.NEW);
-
+        order.setPayment(req.getPayingType().toString());
+        order.setOrderDate(LocalDateTime.now().toString());
         orderRepository.save(order);
         createInvoice(order, req);
         return orderRepository.findAllById(order.getId());
