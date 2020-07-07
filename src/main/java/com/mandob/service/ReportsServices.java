@@ -304,7 +304,8 @@ public class ReportsServices {
             if (customer == null)
                 throw new ApiValidationException("Customer Id", "customer-id-is-not-vaild");
             customers.add(customer);
-        }
+        } else
+            customers = customerRepository.findAll();
         return createOrderReport(customers, from, to);
     }
 
