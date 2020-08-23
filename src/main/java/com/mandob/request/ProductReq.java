@@ -54,9 +54,9 @@ public class ProductReq {
     @Pattern(regexp = "(^$|[0-9]+|[0-9]+\\.[0-9]+)", message = "accept-numbers-or-decimals-only")
     private String weight;
 
-    public Long getBarcode() {
-        return barcode == null ? 0 : Long.parseLong(barcode);
-    }
+//    public Long getBarcode() {
+//        return barcode == null ? 0 : Long.parseLong(barcode);
+//    }
 
     public BigDecimal getPrice() {
         return price == null ? BigDecimal.ZERO : BigDecimal.valueOf(Long.parseLong(price));

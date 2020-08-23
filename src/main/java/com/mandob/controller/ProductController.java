@@ -27,7 +27,8 @@ public class ProductController {
 
     @GetMapping("{productId}")
     public ApiResponse<ProductProjection> findProductById(@PathVariable String productId) {
-        return ApiResponse.ok(productService.findById(productId, ProductProjection.class));
+        //return ApiResponse.ok(productService.findById(productId, ProductProjection.class));
+        return ApiResponse.ok(productService.getProduct(productId));
     }
 
     @PostMapping

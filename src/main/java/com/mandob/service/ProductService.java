@@ -129,6 +129,14 @@ public class ProductService extends MasterService<Product> {
     }
 
 
+    public ProductProjection getProduct(String id) {
+        ProductProjection product = productRepository.findByIdOrBarcode(id, id);
+        if (product == null)
+            throw new ApiValidationException("Product Id", "Product-id-is-not-vaild");
+        return product;
+    }
+
+
     @Override
     protected BaseRepository<Product> getRepository() {
         return productRepository;

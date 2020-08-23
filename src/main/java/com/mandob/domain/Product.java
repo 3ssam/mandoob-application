@@ -35,7 +35,7 @@ public class Product extends MasterFile {
 
     @NotNull
     @Column(name = "barcode", nullable = false)
-    private Long barcode;
+    private String barcode;
 
     @NotNull
     @Column(name = "price", nullable = false)
