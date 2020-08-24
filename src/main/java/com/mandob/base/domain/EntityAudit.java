@@ -2,6 +2,7 @@ package com.mandob.base.domain;
 
 //import com.mandoob.domain.Company;
 //import com.mandoob.domain.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mandob.domain.Company;
 import com.mandob.domain.User;
 import lombok.Getter;
@@ -21,22 +22,23 @@ import java.time.Instant;
 @Getter
 @Setter
 public abstract class EntityAudit extends BaseEntity {
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", referencedColumnName = "id")
-    private Company company;
-
+    @JsonIgnore
     @CreatedBy
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by", referencedColumnName = "id")
     protected User createdBy;
-
-    @CreatedDate
-    protected Instant createdAt;
-
+    @JsonIgnore
     @LastModifiedBy
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "updated_by", referencedColumnName = "id")
     protected User updatedBy;
+
+    @CreatedDate
+    protected Instant createdAt;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    private Company company;
 
     @LastModifiedDate
     protected Instant updatedAt;

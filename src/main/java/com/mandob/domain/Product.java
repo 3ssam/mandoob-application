@@ -1,5 +1,6 @@
 package com.mandob.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mandob.base.domain.MasterFile;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,15 +19,18 @@ public class Product extends MasterFile {
 
     public static int count = 1;
 
+    @JsonIgnore
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", referencedColumnName = "id", nullable = false)
     private Category category;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sub_category_id", referencedColumnName = "id", nullable = false)
     private Category subCategory;
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "products")
     private List<Order> orders = new ArrayList<>();
 
@@ -65,6 +69,11 @@ public class Product extends MasterFile {
 
     @Column(name = "remaining_amount")
     private int remainingAmount;
+
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+    private List<Stock> stocks;
+
 
     @Override
     public String toString() {

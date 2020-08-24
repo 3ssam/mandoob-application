@@ -1,5 +1,6 @@
 package com.mandob.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mandob.domain.enums.SalesforceRole;
 import com.mandob.domain.lookup.City;
 import com.mandob.domain.lookup.Government;
@@ -24,6 +25,7 @@ public class Salesforce extends User {
     //TODO Search @Enumerated
     private SalesforceRole salesforceRole;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "assigned_to", referencedColumnName = "id")
     private Salesforce assignedTo;
@@ -36,31 +38,44 @@ public class Salesforce extends User {
 
     private String detailedAddress;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "government_id", referencedColumnName = "id")
     private Government government;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "city_id", referencedColumnName = "id")
     private City city;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
     private Set<SalesforceMovement> movements = new HashSet<>();
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
     private List<Customer> customers = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
     private List<ScheduleVisit> scheduleVisits = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforce")
     private List<Invoice> invoices = new ArrayList<>();
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesforces")
     private List<Notifications> notifications = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "salesforce")
     private List<Order> orders;
+
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "salesforce")
+    private List<Stock> stocks;
+
 
     @Override
     public String toString() {
