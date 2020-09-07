@@ -3,9 +3,9 @@ package com.mandob.request;
 import com.mandob.domain.enums.SalesforceRole;
 import lombok.Data;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Data
 public class SalesforceReq {
@@ -32,7 +32,8 @@ public class SalesforceReq {
     @NotBlank(message = "must-not-be-blank")
     private String phoneNumber;
 
-    @Max(value = 14, message = "invalid-value")
+    @Size(min = 14, max = 14, message = "invalid-value it should be 14 digit")
+//    @Max(value = 14, message = "invalid-value")
     private String nationalId;
 
     @NotBlank(message = "must-not-be-blank")
